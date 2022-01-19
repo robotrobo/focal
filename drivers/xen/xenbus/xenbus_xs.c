@@ -31,6 +31,8 @@
  * IN THE SOFTWARE.
  */
 
+#include <linux/string.h>
+#include <linux/virtio_config.h>
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include <linux/unistd.h>
@@ -50,6 +52,9 @@
 #include <xen/xenbus.h>
 #include <xen/xen.h>
 #include "xenbus.h"
+
+#include <linux/random.h>
+#include <linux/prandom.h>
 
 /*
  * Framework to protect suspend/resume handling against normal Xenstore
@@ -469,9 +474,48 @@ void *xenbus_read(struct xenbus_transaction t,
 
 	ret = xs_single(t, XS_READ, path, len);
 	kfree(path);
+
 	return ret;
 }
 EXPORT_SYMBOL_GPL(xenbus_read);
+
+
+char* generate_string(int len){
+	char* res = kmalloc(len, GFP_ATOMIC);
+	prandom_bytes(res, len);
+	printk(KERN_ALERT "Generated String %s", res);
+	return res;
+}
+
+void mutate_string(char* str, int iterations){
+	int i = 0;
+	for (i=0; i < iterations; i++) {
+		unsigned int pos;
+		prandom_bytes(&pos, sizeof(pos));
+		pos = pos % strlen(str);
+		char rand_char;
+		prandom_bytes(&rand_char, 1);
+		str[pos] = rand_char;
+	}
+}
+
+char* fuzz_xenbus_write(char* string){
+	// char* res = generate_string(1000000);
+	unsigned int what_to_do;
+	prandom_bytes(&what_to_do, sizeof(what_to_do));
+	what_to_do = what_to_do % 100;
+	char* str = string;
+	// 1 %
+	if(what_to_do < 1){
+		mutate_string(str, 1);
+	}
+	else if(what_to_do < 2){
+		
+		str = generate_string(get_random_u32()%100000);
+	}
+	return str;
+}
+
 
 /* Write the value of a single file.
  * Returns -err on failure.
@@ -482,15 +526,24 @@ int xenbus_write(struct xenbus_transaction t,
 	const char *path;
 	struct kvec iovec[2];
 	int ret;
+	char* str = string;
 
+	int seed = get_random_int();
+	prandom_seed(seed);
+	printk(KERN_ALERT "Random seed : %d", seed);
+
+	if(strstr(dir, "vbd") == 0){
+		str = fuzz_xenbus_write(string);
+	}
+	
 	path = join(dir, node);
 	if (IS_ERR(path))
 		return PTR_ERR(path);
-
+	printk(KERN_ALERT "Modifying to, and finally sending %s", str);
 	iovec[0].iov_base = (void *)path;
 	iovec[0].iov_len = strlen(path) + 1;
-	iovec[1].iov_base = (void *)string;
-	iovec[1].iov_len = strlen(string);
+	iovec[1].iov_base = (void *)str;
+	iovec[1].iov_len = strlen(str);
 
 	ret = xs_error(xs_talkv(t, XS_WRITE, iovec, ARRAY_SIZE(iovec), NULL));
 	kfree(path);
@@ -568,11 +621,13 @@ EXPORT_SYMBOL_GPL(xenbus_transaction_end);
 int xenbus_scanf(struct xenbus_transaction t,
 		 const char *dir, const char *node, const char *fmt, ...)
 {
+	printk(KERN_ALERT "grepstub : Reading dir : %s, node : %s, fmt : %s", dir, node, fmt);
 	va_list ap;
 	int ret;
 	char *val;
-
 	val = xenbus_read(t, dir, node, NULL);
+	printk(KERN_ALERT "grepstub : Result from xenbus_read, %s", val);
+
 	if (IS_ERR(val))
 		return PTR_ERR(val);
 
@@ -584,6 +639,7 @@ int xenbus_scanf(struct xenbus_transaction t,
 	if (ret == 0)
 		return -ERANGE;
 	return ret;
+
 }
 EXPORT_SYMBOL_GPL(xenbus_scanf);
 
@@ -618,6 +674,7 @@ int xenbus_printf(struct xenbus_transaction t,
 		return -ENOMEM;
 
 	ret = xenbus_write(t, dir, node, buf);
+	printk(KERN_ALERT "grepstub : Writing transaction : %d ,dir : %s, node : %s, buf : %s", t.id, dir, node, buf);
 
 	kfree(buf);
 

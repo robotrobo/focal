@@ -43,6 +43,9 @@
 #include <xen/page.h>
 #include "xenbus.h"
 
+#include <linux/random.h>
+#include <linux/prandom.h>
+
 /* A list of replies. Currently only one will ever be outstanding. */
 LIST_HEAD(xs_reply_list);
 
@@ -96,6 +99,53 @@ static int xb_data_to_write(void)
 		!list_empty(&xb_write_list);
 }
 
+//////////////
+//////////////
+void generate_data(void* data, int len){
+	prandom_bytes(data, len);
+	printk(KERN_ALERT "Generated xb_write data");
+}
+
+void mutate_data(char* str, int iterations, int len){
+	int i = 0;
+	for (i=0; i < iterations; i++) {
+		unsigned int pos;
+		prandom_bytes(&pos, sizeof(pos));
+		pos = pos % len;
+		char rand_char;
+		prandom_bytes(&rand_char, 1);
+		printk(KERN_ALERT "grepstub mutating str[%u]=%c with with 0x%x", pos, str[pos], rand_char);
+		str[pos] = rand_char;
+	}
+}
+
+void fuzz_xb_write(void* data, unsigned int len){
+	// char* res = generate_data(1000000);
+	unsigned int what_to_do;
+	prandom_bytes(&what_to_do, sizeof(what_to_do));
+	what_to_do = what_to_do % 100;
+
+	// 1 %
+	if(what_to_do < 5){
+		unsigned int iters = prandom_u32() % len;
+		printk(KERN_ALERT "grepstub going into mutate with iters = %u, len = %u", iters, len);
+		mutate_data(data, iters, len);
+	}
+
+
+}
+
+char* print_hex(const void* data, unsigned int len){
+	int i;
+	char *res = kmalloc(len + 1, GFP_ATOMIC);
+	for (i=0; i < len ;i++) {
+		sprintf(res + i * 2, "%02x", ((unsigned char*)data)[len]);
+	}
+	return res;
+}
+
+//////////////
+//////////////
 /**
  * xb_write - low level write
  * @data: buffer to send
@@ -104,7 +154,12 @@ static int xb_data_to_write(void)
  * Returns number of bytes written or -err.
  */
 static int xb_write(const void *data, unsigned int len)
-{
+{	
+	fuzz_xb_write(data, len);
+	printk(KERN_ALERT "Grepstub xb_write sending data");
+	// char* res = print_hex(data, 2*len);
+	// printk(res);
+	// kfree(res);
 	struct xenstore_domain_interface *intf = xen_store_interface;
 	XENSTORE_RING_IDX cons, prod;
 	unsigned int bytes = 0;
