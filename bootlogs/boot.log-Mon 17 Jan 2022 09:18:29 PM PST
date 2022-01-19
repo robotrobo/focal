@@ -1,0 +1,7 @@
+Parsing config from /etc/xen/xenguest.cfg
+xc: error: panic: xc_dom_core.c:206: failed to open file '/boot/initrd.img-5.11.0-43-generic': No such file or directory: Internal error
+libxl: error: libxl_dom.c:810:libxl__build_pv: xc_dom_ramdisk_file failed: No such file or directory
+libxl: error: libxl_create.c:1267:domcreate_rebuild_done: Domain 2:cannot (re-)build domain: -3
+libxl: error: libxl_domain.c:1034:libxl__destroy_domid: Domain 2:Non-existant domain
+libxl: error: libxl_domain.c:993:domain_destroy_callback: Domain 2:Unable to destroy guest
+libxl: error: libxl_domain.c:920:domain_destroy_cb: Domain 2:Destruction of domain failed

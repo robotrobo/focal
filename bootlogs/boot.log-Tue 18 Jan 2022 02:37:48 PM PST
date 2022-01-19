@@ -1,0 +1,1124 @@
+Parsing config from /etc/xen/xenguest.cfg
+[    0.000000] Linux version 5.4.151custom_anish+ (root@pop-os) (gcc version 11.2.0 (Ubuntu 11.2.0-7ubuntu2)) #57 SMP Tue Jan 18 17:35:40 EST 2022 ()
+[    0.000000] Command line: root=/dev/xvda2 ro elevator=noop
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] Disabled fast string operations
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] ACPI in unprivileged domain disabled
+[    0.000000] Released 0 page(s)
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] Xen: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] Xen: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] Xen: [mem 0x0000000000100000-0x000000013b7fffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] DMI not present or invalid.
+[    0.000000] Hypervisor detected: Xen PV
+[    0.119256] tsc: Fast TSC calibration failed
+[    0.119261] tsc: Detected 2591.996 MHz processor
+[    0.119279] last_pfn = 0x13b800 max_arch_pfn = 0x400000000
+[    0.119280] Disabled
+[    0.119281] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.119297] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WC  WP  UC  UC  
+[    0.119299] last_pfn = 0x100000 max_arch_pfn = 0x400000000
+[    0.217938] check: Scanning 1 areas for low memory corruption
+[    0.217946] Kernel/User page tables isolation: disabled on XEN PV.
+[    0.845575] RAMDISK: [mem 0x04000000-0x07b80fff]
+[    0.845633] NUMA turned off
+[    0.845634] Faking a node at [mem 0x0000000000000000-0x000000013b7fffff]
+[    0.845643] NODE_DATA(0) allocated [mem 0x13ae22000-0x13ae4bfff]
+[    0.857138] Zone ranges:
+[    0.857139]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.857141]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.857142]   Normal   [mem 0x0000000100000000-0x000000013b7fffff]
+[    0.857143]   Device   empty
+[    0.857144] Movable zone start for each node
+[    0.857145] Early memory node ranges
+[    0.857146]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.857147]   node   0: [mem 0x0000000000100000-0x000000013b7fffff]
+[    0.857256] Zeroed struct page in unavailable ranges: 18529 pages
+[    0.857257] Initmem setup node 0 [mem 0x0000000000001000-0x000000013b7fffff]
+[    0.870829] p2m virtual area at (____ptrval____), size is 40000000
+[    0.953484] Remapped 0 page(s)
+[    0.953572] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.953578] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.953579] PM: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[    0.953580] Cannot find an available gap in the 32-bit address range
+[    0.953581] PCI devices with unassigned 32-bit BARs may not work!
+[    0.953582] [mem 0x13b900000-0x13bcfffff] available for PCI devices
+[    0.953584] Booting paravirtualized kernel on Xen
+[    0.953585] Xen version: 4.11.4-pre (preserve-AD)
+[    0.953588] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.953592] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+[    0.953697] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
+[    0.953737] Built 1 zonelists, mobility grouping on.  Total pages: 1271978
+[    0.953738] Policy zone: Normal
+[    0.953739] Kernel command line: root=/dev/xvda2 ro elevator=noop
+[    0.954097] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    0.954259] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.954434] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.965142] Memory: 4951688K/5168764K available (16387K kernel code, 3654K rwdata, 9320K rodata, 2764K init, 5728K bss, 217076K reserved, 0K cma-reserved)
+[    0.965150] random: get_random_u64 called from __kmem_cache_create+0x42/0x6f0 with crng_init=0
+[    0.965378] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.965676] ftrace: allocating 43028 entries in 169 pages
+[    0.978465] rcu: Hierarchical RCU implementation.
+[    0.978467] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
+[    0.978468] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.978469] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.982305] Using NULL legacy PIC
+[    0.982307] NR_IRQS: 524544, nr_irqs: 32, preallocated irqs: 0
+[    0.982351] xen:events: Using FIFO-based ABI
+[    0.982397] random: crng done (trusting CPU's manufacturer)
+[    0.982426] Console: colour dummy device 80x25
+[    0.982480] printk: console [tty0] enabled
+[    0.982700] printk: console [hvc0] enabled
+[    0.982726] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.982794] installing Xen timer for CPU 0
+[    0.983257] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255cb30caa3, max_idle_ns: 440795217292 ns
+[    0.983279] Calibrating delay loop (skipped), value calculated using timer frequency.. 5183.99 BogoMIPS (lpj=10367984)
+[    0.983285] pid_max: default: 32768 minimum: 301
+[    0.983370] LSM: Security Framework initializing
+[    0.983393] Yama: becoming mindful.
+[    0.983449] AppArmor: AppArmor initialized
+[    0.983558] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.983585] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.983627] *** VALIDATE tmpfs ***
+[    0.983844] *** VALIDATE proc ***
+[    0.983983] *** VALIDATE cgroup1 ***
+[    0.983990] *** VALIDATE cgroup2 ***
+[    0.984081] Disabled fast string operations
+[    0.984130] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.984133] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.984141] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.984146] Spectre V2 : Mitigation: Full generic retpoline
+[    0.984149] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.984153] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    0.984156] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.984160] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+[    0.984166] MDS: Mitigation: Clear CPU buffers
+[    1.027064] Freeing SMP alternatives memory: 40K
+[    1.028357] VPMU disabled by hypervisor.
+[    1.028518] Performance Events: unsupported p6 CPU model 165 no PMU driver, software events only.
+[    1.028587] rcu: Hierarchical SRCU implementation.
+[    1.028965] NMI watchdog: Perf NMI watchdog permanently disabled
+[    1.029017] smp: Bringing up secondary CPUs ...
+[    1.029034] smp: Brought up 1 node, 1 CPU
+[    1.029037] smpboot: Max logical packages: 1
+[    1.029284] devtmpfs: initialized
+[    1.029332] x86/mm: Memory block size: 128MB
+[    1.029677] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    1.029700] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.029736] pinctrl core: initialized pinctrl subsystem
+[    1.029895] NET: Registered protocol family 16
+[    1.029910] xen:grant_table: Grant tables using version 1 layout
+[    1.029922] Grant table initialized
+[    1.029946] audit: initializing netlink subsys (disabled)
+[    1.030027] audit: type=2000 audit(1642545475.789:1): state=initialized audit_enabled=0 res=1
+[    1.030105] EISA bus registered
+[    1.030145] Grepstub xb_write sending data
+[    1.030159] Grepstub xb_write sending data
+[    1.030163] Grepstub xb_write sending data
+[    1.030171] grepstub : Reading dir : cpu/0, node : availability, fmt : %15s
+[    1.030171] Grepstub xb_write sending data
+[    1.030171] Grepstub xb_write sending data
+[    1.030171] grepstub : Result from xenbus_read, online
+[    1.031298] PCI: setting up Xen PCI frontend stub
+[    1.033399] fbcon: Taking over console
+[    1.033407] ACPI: Interpreter disabled.
+[    1.033418] xen:balloon: Initialising balloon driver
+[    1.033462] Grepstub xb_write sending data
+[    1.033479] Grepstub xb_write sending data
+[    1.033483] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] grepstub : Reading dir : memory, node : target, fmt : %llu
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] grepstub : Result from xenbus_read, 5169152
+[    1.033491] grepstub : Reading dir : memory, node : static-max, fmt : %llu
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Random seed : 544520942
+[    1.033491] Modifying to, and finally sending 1
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] grepstub : Result from xenbus_read, 5169152
+[    1.033491] Grepstub xb_write sending data
+[    1.033491] Grepstub xb_write sending data
+[    1.035342] grepstub : Writing transaction : 0 ,dir : control, node : feature-poweroff, buf : 1
+[    1.035361] Random seed : 1955980984
+[    1.035366] Modifying to, and finally sending 1
+[    1.035372] Grepstub xb_write sending data
+[    1.035375] Grepstub xb_write sending data
+[    1.035377] Grepstub xb_write sending data
+[    1.035385] grepstub : Writing transaction : 0 ,dir : control, node : feature-reboot, buf : 1
+[    1.035385] Random seed : -653014165
+[    1.035385] Modifying to, and finally sending 1
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] grepstub : Writing transaction : 0 ,dir : control, node : feature-suspend, buf : 1
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] grepstub : Reading dir : control, node : sysrq, fmt : %c
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] grepstub : Result from xenbus_read, (efault)
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] Grepstub xb_write sending data
+[    1.035385] iommu: Default domain type: Translated 
+[    1.035522] SCSI subsystem initialized
+[    1.035585] vgaarb: loaded
+[    1.035626] usbcore: registered new interface driver usbfs
+[    1.035647] usbcore: registered new interface driver hub
+[    1.035654] usbcore: registered new device driver usb
+[    1.035676] pps_core: LinuxPPS API ver. 1 registered
+[    1.035692] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.035699] PTP clock support registered
+[    1.035740] EDAC MC: Ver: 3.0.0
+[    1.039345] PCI: System does not support PCI
+[    1.039414] NetLabel: Initializing
+[    1.039417] NetLabel:  domain hash size = 128
+[    1.039420] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.039432] NetLabel:  unlabeled traffic allowed by default
+[    1.040139] clocksource: Switched to clocksource xen
+[    1.047028] *** VALIDATE bpf ***
+[    1.047065] VFS: Disk quotas dquot_6.6.0
+[    1.047076] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.047093] *** VALIDATE ramfs ***
+[    1.047096] hugetlbfs: disabling because there are no supported hugepage sizes
+[    1.047150] AppArmor: AppArmor Filesystem Enabled
+[    1.047161] pnp: PnP ACPI: disabled
+[    1.048058] thermal_sys: Registered thermal governor 'fair_share'
+[    1.048058] thermal_sys: Registered thermal governor 'bang_bang'
+[    1.048063] thermal_sys: Registered thermal governor 'step_wise'
+[    1.048067] thermal_sys: Registered thermal governor 'user_space'
+[    1.048070] thermal_sys: Registered thermal governor 'power_allocator'
+[    1.048114] NET: Registered protocol family 2
+[    1.048203] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.048889] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    1.048936] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    1.049050] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+[    1.049106] TCP: Hash tables configured (established 65536 bind 65536)
+[    1.049135] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.049157] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.049259] NET: Registered protocol family 1
+[    1.049267] NET: Registered protocol family 44
+[    1.049272] PCI: CLS 0 bytes, default 64
+[    1.049304] Trying to unpack rootfs image as initramfs...
+[    1.169765] Freeing initrd memory: 60932K
+[    1.169873] check: Scanning for low memory corruption every 60 seconds
+[    1.170124] Initialise system trusted keyrings
+[    1.170135] Key type blacklist registered
+[    1.234909] workingset: timestamp_bits=36 max_order=21 bucket_order=0
+[    1.235663] zbud: loaded
+[    1.235916] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.236048] fuse: init (API version 7.31)
+[    1.236063] *** VALIDATE fuse ***
+[    1.236066] *** VALIDATE fuse ***
+[    1.236131] Platform Keyring initialized
+[    1.238354] Key type asymmetric registered
+[    1.238376] Asymmetric key parser 'x509' registered
+[    1.238385] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    1.238426] io scheduler mq-deadline registered
+[    1.238491] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.238755] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    1.239715] Linux agpgart interface v0.103
+[    1.335618] loop: module loaded
+[    1.335719] Invalid max_queues (4), will use default max: 1.
+[    1.335781] Grepstub xb_write sending data
+[    1.335785] Grepstub xb_write sending data
+[    1.336423] Grepstub xb_write sending data
+[    1.336514] Grepstub xb_write sending data
+[    1.337195] Grepstub xb_write sending data
+[    1.337225] Grepstub xb_write sending data
+[    1.338250] grepstub : Reading dir : device/vbd/51714, node : virtual-device, fmt : %i
+[    1.338329] Grepstub xb_write sending data
+[    1.338389] Grepstub xb_write sending data
+[    1.338992] grepstub : Result from xenbus_read, 51714
+[    1.339035] Grepstub xb_write sending data
+[    1.339050] Grepstub xb_write sending data
+[    1.339059] Grepstub xb_write sending data
+[    1.340291] Grepstub xb_write sending data
+[    1.340313] Grepstub xb_write sending data
+[    1.340375] Grepstub xb_write sending data
+[    1.340386] Grepstub xb_write sending data
+[    1.341195] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : max-ring-page-order, fmt : %u
+[    1.341236] Grepstub xb_write sending data
+[    1.341302] Grepstub xb_write sending data
+[    1.341337] Grepstub xb_write sending data
+[    1.341347] Grepstub xb_write sending data
+[    1.342689] grepstub : Result from xenbus_read, 4
+[    1.342711] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : multi-queue-max-queues, fmt : %u
+[    1.342735] Grepstub xb_write sending data
+[    1.342756] Grepstub xb_write sending data
+[    1.342781] Grepstub xb_write sending data
+[    1.342790] Grepstub xb_write sending data
+[    1.343573] grepstub : Result from xenbus_read, 2
+[    1.343701] Grepstub xb_write sending data
+[    1.343767] Grepstub xb_write sending data
+[    1.343799] grepstub : Reading dir : device/vbd/51713, node : virtual-device, fmt : %i
+[    1.343819] Grepstub xb_write sending data
+[    1.343835] Grepstub xb_write sending data
+[    1.345568] Random seed : -768675376
+[    1.345650] Modifying to, and finally sending 8
+[    1.345674] Grepstub xb_write sending data
+[    1.345731] Grepstub xb_write sending data
+[    1.345743] Grepstub xb_write sending data
+[    1.345763] grepstub : Result from xenbus_read, 51713
+[    1.345789] Grepstub xb_write sending data
+[    1.345809] Grepstub xb_write sending data
+[    1.345865] Grepstub xb_write sending data
+[    1.346617] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : ring-ref, buf : 8
+[    1.346688] Random seed : 1146403406
+[    1.346708] Modifying to, and finally sending 9
+[    1.346730] Grepstub xb_write sending data
+[    1.346785] Grepstub xb_write sending data
+[    1.346797] Grepstub xb_write sending data
+[    1.347258] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : event-channel, buf : 9
+[    1.347297] Random seed : 1041714239
+[    1.347341] Modifying to, and finally sending x86_64-abi
+[    1.347359] Grepstub xb_write sending data
+[    1.347375] Grepstub xb_write sending data
+[    1.347384] Grepstub xb_write sending data
+[    1.347823] libphy: Fixed MDIO Bus: probed
+[    1.347846] tun: Universal TUN/TAP device driver, 1.6
+[    1.347943] PPP generic driver version 2.4.2
+[    1.348022] xen_netfront: Initialising Xen virtual ethernet driver
+[    1.348068] Grepstub xb_write sending data
+[    1.348069] Grepstub xb_write sending data
+[    1.349689] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : protocol, buf : x86_64-abi
+[    1.349716] Random seed : 1964085503
+[    1.349737] Modifying to, and finally sending 1
+[    1.349756] Grepstub xb_write sending data
+[    1.349769] Grepstub xb_write sending data
+[    1.349777] Grepstub xb_write sending data
+[    1.349804] Grepstub xb_write sending data
+[    1.349814] Grepstub xb_write sending data
+[    1.350694] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : feature-persistent, buf : 1
+[    1.350721] Grepstub xb_write sending data
+[    1.350742] Grepstub xb_write sending data
+[    1.350768] Grepstub xb_write sending data
+[    1.350777] Grepstub xb_write sending data
+[    1.352238] Grepstub xb_write sending data
+[    1.352259] Grepstub xb_write sending data
+[    1.352310] Grepstub xb_write sending data
+[    1.352320] Grepstub xb_write sending data
+[    1.353348] grepstub : Reading dir : device/vbd/51714, node : state, fmt : %d
+[    1.353387] Grepstub xb_write sending data
+[    1.353409] Grepstub xb_write sending data
+[    1.353437] Grepstub xb_write sending data
+[    1.353446] Grepstub xb_write sending data
+[    1.354245] grepstub : Result from xenbus_read, 1
+[    1.354272] Random seed : -579883576
+[    1.354286] Modifying to, and finally sending 3
+[    1.354305] Grepstub xb_write sending data
+[    1.354367] Grepstub xb_write sending data
+[    1.354380] Grepstub xb_write sending data
+[    1.354415] Grepstub xb_write sending data
+[    1.354425] Grepstub xb_write sending data
+[    1.354434] Grepstub xb_write sending data
+[    1.355365] grepstub : Writing transaction : 4 ,dir : device/vbd/51714, node : state, buf : 3
+[    1.355413] Grepstub xb_write sending data
+[    1.355526] Grepstub xb_write sending data
+[    1.356053] Grepstub xb_write sending data
+[    1.356113] Grepstub xb_write sending data
+[    1.356161] VFIO - User Level meta-driver version: 0.3
+[    1.356321] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.356352] ehci-pci: EHCI PCI platform driver
+[    1.356380] ehci-platform: EHCI generic platform driver
+[    1.356407] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.356428] ohci-pci: OHCI PCI platform driver
+[    1.356451] ohci-platform: OHCI generic platform driver
+[    1.356550] uhci_hcd: USB Universal Host Controller Interface driver
+[    1.356654] i8042: PNP: No PS/2 controller found.
+[    1.434660] i8042: Probing ports directly.
+[    1.435529] i8042: No controller found
+[    1.435571] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51713, node : max-ring-page-order, fmt : %u
+[    1.435575] Grepstub xb_write sending data
+[    1.435581] Grepstub xb_write sending data
+[    1.435663] mousedev: PS/2 mouse device common for all mice
+[    1.435740] i2c /dev entries driver
+[    1.435793] device-mapper: uevent: version 1.0.3
+[    1.435853] device-mapper: ioctl: 4.41.0-ioctl (2019-09-16) initialised: dm-devel@redhat.com
+[    1.435898] platform eisa.0: Probing EISA bus 0
+[    1.435941] platform eisa.0: EISA: Detected 0 cards
+[    1.435957] intel_pstate: CPU model not supported
+[    1.435982] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.436024] drop_monitor: Initializing network drop monitor service
+[    1.436145] NET: Registered protocol family 10
+[    1.436235] grepstub : Result from xenbus_read, 4
+[    1.436236] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51713, node : multi-queue-max-queues, fmt : %u
+[    1.436243] Grepstub xb_write sending data
+[    1.436260] Grepstub xb_write sending data
+[    1.436415] grepstub : Result from xenbus_read, 2
+[    1.436448] Grepstub xb_write sending data
+[    1.436452] Grepstub xb_write sending data
+[    1.436985] Random seed : 1383048451
+[    1.437003] Modifying to, and finally sending 9
+[    1.437009] Grepstub xb_write sending data
+[    1.437023] Grepstub xb_write sending data
+[    1.437026] Grepstub xb_write sending data
+[    1.437216] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : ring-ref, buf : 9
+[    1.437234] Random seed : 668213183
+[    1.437239] Modifying to, and finally sending 10
+[    1.437244] Grepstub xb_write sending data
+[    1.437259] Grepstub xb_write sending data
+[    1.437262] Grepstub xb_write sending data
+[    1.437415] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : event-channel, buf : 10
+[    1.437432] Random seed : -1589442136
+[    1.437448] Modifying to, and finally sending x86_64-abi
+[    1.437454] Grepstub xb_write sending data
+[    1.437468] Grepstub xb_write sending data
+[    1.437471] Grepstub xb_write sending data
+[    1.437620] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : protocol, buf : x86_64-abi
+[    1.437638] Random seed : 1830022794
+[    1.437643] Modifying to, and finally sending 1
+[    1.437648] Grepstub xb_write sending data
+[    1.437662] Grepstub xb_write sending data
+[    1.437665] Grepstub xb_write sending data
+[    1.437814] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : feature-persistent, buf : 1
+[    1.437833] Grepstub xb_write sending data
+[    1.437849] Grepstub xb_write sending data
+[    1.438114] Grepstub xb_write sending data
+[    1.438130] Grepstub xb_write sending data
+[    1.438213] grepstub : Reading dir : device/vbd/51713, node : state, fmt : %d
+[    1.438220] Grepstub xb_write sending data
+[    1.438235] Grepstub xb_write sending data
+[    1.438319] grepstub : Result from xenbus_read, 1
+[    1.438324] Random seed : 909717859
+[    1.438327] Modifying to, and finally sending 3
+[    1.438331] Grepstub xb_write sending data
+[    1.438346] Grepstub xb_write sending data
+[    1.438349] Grepstub xb_write sending data
+[    1.438770] grepstub : Writing transaction : 6 ,dir : device/vbd/51713, node : state, buf : 3
+[    1.438777] grepstub going into mutate with iters = 2, len = 16
+[    1.438781] grepstub mutating str[10]=  with with 0xe
+[    1.438785] grepstub mutating str[1]=  with with 0x6b
+[    1.438787] Grepstub xb_write sending data
+[    1.438791] Grepstub xb_write sending data
+[    1.438972] vbd vbd-51713: 5 ending transaction
+[    1.438980] Random seed : -976392371
+[    1.438980] Modifying to, and finally sending 5 ending transaction
+[    1.438985] Grepstub xb_write sending data
+[    1.439004] Grepstub xb_write sending data
+[    1.439008] Grepstub xb_write sending data
+[    1.439132] Grepstub xb_write sending data
+[    1.439147] Grepstub xb_write sending data
+[    1.439229] grepstub : Reading dir : device/vbd/51713, node : state, fmt : %d
+[    1.439235] Grepstub xb_write sending data
+[    1.439242] Grepstub xb_write sending data
+[    1.439336] grepstub : Result from xenbus_read, 1
+[    1.439342] Random seed : 831742584
+[    1.439345] Modifying to, and finally sending 5
+[    1.439349] Grepstub xb_write sending data
+[    1.439367] Grepstub xb_write sending data
+[    1.439370] Grepstub xb_write sending data
+[    1.439530] grepstub : Writing transaction : 7 ,dir : device/vbd/51713, node : state, buf : 5
+[    1.439537] Grepstub xb_write sending data
+[    1.439552] Grepstub xb_write sending data
+[    1.439682] Grepstub xb_write sending data
+[    1.439697] Grepstub xb_write sending data
+[    1.635901] Grepstub xb_write sending data
+[    1.635924] Grepstub xb_write sending data
+[    1.636115] Grepstub xb_write sending data
+[    1.636149] Grepstub xb_write sending data
+[    1.636407] Grepstub xb_write sending data
+[    1.636424] Grepstub xb_write sending data
+[    1.636691] Grepstub xb_write sending data
+[    1.636707] Grepstub xb_write sending data
+[    1.636885] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-rx-copy, fmt : %u
+[    1.636904] Grepstub xb_write sending data
+[    1.636931] Grepstub xb_write sending data
+[    1.637070] grepstub : Result from xenbus_read, 1
+[    1.637086] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : multi-queue-max-queues, fmt : %u
+[    1.637092] Grepstub xb_write sending data
+[    1.637108] Grepstub xb_write sending data
+[    1.637244] grepstub : Result from xenbus_read, 2
+[    1.637260] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-split-event-channels, fmt : %u
+[    1.637266] Grepstub xb_write sending data
+[    1.637282] Grepstub xb_write sending data
+[    1.637418] grepstub : Result from xenbus_read, 1
+[    1.637437] Grepstub xb_write sending data
+[    1.637462] Grepstub xb_write sending data
+[    1.637646] Grepstub xb_write sending data
+[    1.637651] Grepstub xb_write sending data
+[    1.638056] Grepstub xb_write sending data
+[    1.638082] Grepstub xb_write sending data
+[    1.638347] Random seed : 14041925
+[    1.638363] Modifying to, and finally sending 1
+[    1.638379] Grepstub xb_write sending data
+[    1.638397] Grepstub xb_write sending data
+[    1.638401] Grepstub xb_write sending data
+[    1.638607] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : multi-queue-num-queues, buf : 1
+[    1.638624] Random seed : -398375066
+[    1.638640] Modifying to, and finally sending 768
+[    1.638645] Grepstub xb_write sending data
+[    1.638659] Grepstub xb_write sending data
+[    1.638662] Grepstub xb_write sending data
+[    1.638809] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : tx-ring-ref, buf : 768
+[    1.638826] Random seed : -1908124683
+[    1.638831] Modifying to, and finally sending 769
+[    1.638836] Grepstub xb_write sending data
+[    1.638849] Grepstub xb_write sending data
+[    1.638853] Grepstub xb_write sending data
+[    1.638998] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : rx-ring-ref, buf : 769
+[    1.639014] Random seed : -774963406
+[    1.639030] Modifying to, and finally sending 11
+[    1.639035] Grepstub xb_write sending data
+[    1.639049] Grepstub xb_write sending data
+[    1.639052] Grepstub xb_write sending data
+[    1.639194] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : event-channel-tx, buf : 11
+[    1.639211] Random seed : -783230376
+[    1.639227] Modifying to, and finally sending 12
+[    1.639232] Grepstub xb_write sending data
+[    1.639246] Grepstub xb_write sending data
+[    1.639249] Grepstub xb_write sending data
+[    1.639396] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : event-channel-rx, buf : 12
+[    1.639413] Random seed : 243105546
+[    1.639418] Modifying to, and finally sending 1
+[    1.639423] Grepstub xb_write sending data
+[    1.639437] Grepstub xb_write sending data
+[    1.639441] Grepstub xb_write sending data
+[    1.639581] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : request-rx-copy, buf : 1
+[    1.639586] Random seed : 312957743
+[    1.639591] Modifying to, and finally sending 1
+[    1.639595] Grepstub xb_write sending data
+[    1.639599] Grepstub xb_write sending data
+[    1.639601] Grepstub xb_write sending data
+[    1.640096] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : feature-rx-notify, buf : 1
+[    1.640102] Random seed : 1388587079
+[    1.640107] Modifying to, and finally sending 1
+[    1.640111] Grepstub xb_write sending data
+[    1.640115] Grepstub xb_write sending data
+[    1.640118] Grepstub xb_write sending data
+[    1.640289] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : feature-sg, buf : 1
+[    1.640294] Random seed : 417629893
+[    1.640299] Modifying to, and finally sending 1
+[    1.640303] Grepstub xb_write sending data
+[    1.640322] Grepstub xb_write sending data
+[    1.640325] Grepstub xb_write sending data
+[    1.640432] grepstub : Writing transaction : 8 ,dir : device/vif/0, node : feature-gso-tcpv4, buf : 1
+[    1.640436] Random seed : 795967829
+[    1.640441] Modifying to, and finally sending 1
+[    1.640446] Grepstub xb_write sending data
+[    1.640474] Grepstub xb_write sending data
+[    1.640478] Grepstub xb_write sending data
+[    1.640724] Random seed : -58285333
+[    1.640729] Modifying to, and finally sending 1
+[    1.640733] Grepstub xb_write sending data
+[    1.640748] Grepstub xb_write sending data
+[    1.640751] Grepstub xb_write sending data
+[    1.640857] Grepstub xb_write sending data
+[    1.640872] Grepstub xb_write sending data
+[    1.641348] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-sg, fmt : %u
+[    1.641356] Grepstub xb_write sending data
+[    1.641377] Grepstub xb_write sending data
+[    1.641473] grepstub : Result from xenbus_read, 1
+[    1.641478] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-ipv6-csum-offload, fmt : %u
+[    1.641483] Grepstub xb_write sending data
+[    1.835788] Grepstub xb_write sending data
+[    1.837380] grepstub : Result from xenbus_read, 1
+[    1.837404] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv4, fmt : %u
+[    1.837412] Grepstub xb_write sending data
+[    1.837417] Grepstub xb_write sending data
+[    1.837596] grepstub : Result from xenbus_read, 1
+[    1.837614] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv6, fmt : %u
+[    1.837631] Grepstub xb_write sending data
+[    1.837647] Grepstub xb_write sending data
+[    1.837903] grepstub : Result from xenbus_read, 1
+[    1.837981] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-sg, fmt : %u
+[    1.837990] Grepstub xb_write sending data
+[    1.838007] Grepstub xb_write sending data
+[    1.838124] grepstub : Result from xenbus_read, 1
+[    1.838141] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-ipv6-csum-offload, fmt : %u
+[    1.838147] Grepstub xb_write sending data
+[    1.838163] Grepstub xb_write sending data
+[    1.838314] grepstub : Result from xenbus_read, 1
+[    1.838330] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv4, fmt : %u
+[    1.838336] Grepstub xb_write sending data
+[    1.838352] Grepstub xb_write sending data
+[    1.838489] grepstub : Result from xenbus_read, 1
+[    1.838506] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv6, fmt : %u
+[    1.838512] Grepstub xb_write sending data
+[    1.838528] Grepstub xb_write sending data
+[    1.838680] grepstub : Result from xenbus_read, 1
+[    1.838857] Grepstub xb_write sending data
+[    1.838861] Grepstub xb_write sending data
+[    1.839343] grepstub : Reading dir : device/vif/0, node : state, fmt : %d
+[    1.839353] Grepstub xb_write sending data
+[    1.839356] Grepstub xb_write sending data
+[    1.839749] grepstub : Result from xenbus_read, 1
+[    1.839767] Random seed : 1077285070
+[    1.839771] Modifying to, and finally sending 4
+[    1.839776] Grepstub xb_write sending data
+[    1.839790] Grepstub xb_write sending data
+[    1.839793] Grepstub xb_write sending data
+[    1.840075] grepstub : Writing transaction : 9 ,dir : device/vif/0, node : state, buf : 4
+[    1.840093] Grepstub xb_write sending data
+[    1.840108] Grepstub xb_write sending data
+[    1.840314] Grepstub xb_write sending data
+[    1.840339] Grepstub xb_write sending data
+[    1.840426] Grepstub xb_write sending data
+[    1.840441] Grepstub xb_write sending data
+[    1.840601] Grepstub xb_write sending data
+[    1.840626] Grepstub xb_write sending data
+[    1.840775] Grepstub xb_write sending data
+[    1.840791] Grepstub xb_write sending data
+[    1.840934] Grepstub xb_write sending data
+[    1.840959] Grepstub xb_write sending data
+[    1.841076] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : physical-sector-size, fmt : %u
+[    1.841083] Grepstub xb_write sending data
+[    1.841101] Grepstub xb_write sending data
+[    1.841230] Segment Routing with IPv6
+[    1.841254] NET: Registered protocol family 17
+[    1.841295] Key type dns_resolver registered
+[    1.841383] RAS: Correctable Errors collector initialized.
+[    1.841391] IPI shorthand broadcast: enabled
+[    1.841398] sched_clock: Marking stable (1838372024, 913468)->(1986998475, -147712983)
+[    1.841558] grepstub : Result from xenbus_read, 512
+[    1.841560] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : feature-barrier, fmt : %u
+[    1.841567] Grepstub xb_write sending data
+[    1.841572] Grepstub xb_write sending data
+[    1.841599] registered taskstats version 1
+[    1.841611] Loading compiled-in X.509 certificates
+[    1.842121] Loaded X.509 cert 'Build time autogenerated kernel key: 44338da996bb5bbcd96aaf33d33630dd991c7e76'
+[    1.842144] zswap: loaded using pool lzo/zbud
+[    1.842241] grepstub : Result from xenbus_read, 1
+[    1.842242] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : feature-flush-cache, fmt : %u
+[    1.842249] Grepstub xb_write sending data
+[    1.842267] Grepstub xb_write sending data
+[    1.842315] Key type ._fscrypt registered
+[    1.842321] Key type .fscrypt registered
+[    1.842403] grepstub : Result from xenbus_read, 1
+[    1.842404] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : feature-discard, fmt : %u
+[    1.842411] Grepstub xb_write sending data
+[    1.842416] Grepstub xb_write sending data
+[    1.842558] grepstub : Result from xenbus_read, 1
+[    1.842563] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : discard-granularity, fmt : %u
+[    1.842568] Grepstub xb_write sending data
+[    1.842586] Grepstub xb_write sending data
+[    1.842702] grepstub : Result from xenbus_read, 4096
+[    1.842718] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : discard-alignment, fmt : %u
+[    2.039652] Grepstub xb_write sending data
+[    2.039677] Grepstub xb_write sending data
+[    2.039718] Key type encrypted registered
+[    2.039725] AppArmor: AppArmor sha1 policy hashing enabled
+[    2.039732] ima: No TPM chip found, activating TPM-bypass!
+[    2.039739] ima: Allocated hash algorithm: sha1
+[    2.039746] ima: No architecture policies found
+[    2.039754] evm: Initialising EVM extended attributes:
+[    2.039757] evm: security.selinux
+[    2.039759] evm: security.SMACK64
+[    2.039761] evm: security.SMACK64EXEC
+[    2.039764] evm: security.SMACK64TRANSMUTE
+[    2.039766] evm: security.SMACK64MMAP
+[    2.039768] evm: security.apparmor
+[    2.039770] evm: security.ima
+[    2.039772] evm: security.capability
+[    2.039774] evm: HMAC attrs: 0x1
+[    2.039964] grepstub : Result from xenbus_read, 0
+[    2.039966] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : discard-secure, fmt : %u
+[    2.039987] Grepstub xb_write sending data
+[    2.040002] Grepstub xb_write sending data
+[    2.040164] grepstub : Result from xenbus_read, 0
+[    2.040180] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : feature-persistent, fmt : %u
+[    2.040187] Grepstub xb_write sending data
+[    2.040202] Grepstub xb_write sending data
+[    2.040331] grepstub : Result from xenbus_read, 1
+[    2.040347] grepstub : Reading dir : /local/domain/0/backend/vbd/11/51714, node : feature-max-indirect-segments, fmt : %u
+[    2.040354] Grepstub xb_write sending data
+[    2.040369] Grepstub xb_write sending data
+[    2.040516] grepstub : Result from xenbus_read, 256
+[    2.040951] blkfront: xvda2: flush diskcache: enabled; persistent grants: enabled; indirect descriptors: enabled;
+[    2.040988] Grepstub xb_write sending data
+[    2.040999] Grepstub xb_write sending data
+[    2.041162] grepstub : Reading dir : device/vbd/51714, node : state, fmt : %d
+[    2.041181] Grepstub xb_write sending data
+[    2.041196] Grepstub xb_write sending data
+[    2.041328] grepstub : Result from xenbus_read, 3
+[    2.041344] Random seed : 97082233
+[    2.041348] Modifying to, and finally sending 4
+[    2.041353] Grepstub xb_write sending data
+[    2.041366] Grepstub xb_write sending data
+[    2.041370] Grepstub xb_write sending data
+[    2.041523] grepstub : Writing transaction : 10 ,dir : device/vbd/51714, node : state, buf : 4
+[    2.041541] Grepstub xb_write sending data
+[    2.041566] Grepstub xb_write sending data
+[    2.047396] Grepstub xb_write sending data
+[    2.047418] Grepstub xb_write sending data
+[    2.047613] Grepstub xb_write sending data
+[    2.047641] Grepstub xb_write sending data
+[    2.047862] Grepstub xb_write sending data
+[    2.047868] Grepstub xb_write sending data
+[    2.048138] Grepstub xb_write sending data
+[    2.048155] Grepstub xb_write sending data
+[    2.048262] Grepstub xb_write sending data
+[    2.048289] Grepstub xb_write sending data
+[    2.048481] Grepstub xb_write sending data
+[    2.048489] Grepstub xb_write sending data
+[    2.048730] Grepstub xb_write sending data
+[    2.048735] Grepstub xb_write sending data
+[    2.048918] Grepstub xb_write sending data
+[    2.048925] Grepstub xb_write sending data
+[    2.049134] Grepstub xb_write sending data
+[    2.049141] Grepstub xb_write sending data
+[    2.049370] Grepstub xb_write sending data
+[    2.049375] Grepstub xb_write sending data
+[    2.049479] Grepstub xb_write sending data
+[    2.049495] Grepstub xb_write sending data
+[    2.049586] Grepstub xb_write sending data
+[    2.049603] Grepstub xb_write sending data
+[    2.049712] Grepstub xb_write sending data
+[    2.049719] Grepstub xb_write sending data
+[    2.049825] Grepstub xb_write sending data
+[    2.049832] Grepstub xb_write sending data
+[    2.049928] Grepstub xb_write sending data
+[    2.049946] Grepstub xb_write sending data
+[    2.050042] Grepstub xb_write sending data
+[    2.050060] Grepstub xb_write sending data
+[    2.050154] Grepstub xb_write sending data
+[    2.050173] Grepstub xb_write sending data
+[    2.050276] Grepstub xb_write sending data
+[    2.050283] Grepstub xb_write sending data
+[    2.050407] Grepstub xb_write sending data
+[    2.050422] Grepstub xb_write sending data
+[    2.050544] Grepstub xb_write sending data
+[    2.050560] Grepstub xb_write sending data
+[    2.143426] hctosys: unable to open rtc device (rtc0)
+[    2.144976] Freeing unused decrypted memory: 2040K
+[    2.145779] Freeing unused kernel image memory: 2764K
+[    2.145785] Write protecting the kernel read-only data: 28672k
+[    2.154326] Freeing unused kernel image memory: 2008K
+[    2.154645] Freeing unused kernel image memory: 920K
+[    2.191327] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    2.191335] Run /init as init process
+Loading, please wait...
+[    2.199327] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x255cb30caa3, max_idle_ns: 440795217292 ns
+Starting version 245.4-4ubuntu3.15
+[    2.373920] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-sg, fmt : %u
+[    2.373928] Grepstub xb_write sending data
+[    2.373954] Grepstub xb_write sending data
+[    2.375525] grepstub : Result from xenbus_read, 1
+[    2.375532] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-ipv6-csum-offload, fmt : %u
+[    2.375539] Grepstub xb_write sending data
+[    2.375544] Grepstub xb_write sending data
+[    2.376095] grepstub : Result from xenbus_read, 1
+[    2.376117] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv4, fmt : %u
+[    2.376125] Grepstub xb_write sending data
+[    2.376152] Grepstub xb_write sending data
+[    2.376306] grepstub : Result from xenbus_read, 1
+[    2.376322] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv6, fmt : %u
+[    2.376329] Grepstub xb_write sending data
+[    2.376344] Grepstub xb_write sending data
+Begin: Loading essential drivers ... done.
+Begin: Running /scripts/init-premount ... done.
+Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
+Begin: Running /scripts/local-premount ... done.
+Begin: Will now check root file system ... fsck from util-linux 2.34
+[/usr/sbin/fsck.ext4 (1) -- /dev/xvda2] fsck.ext4 -a -C0 /dev/xvda2 
+/dev/xvda2: recovering journal
+/dev/xvda2: clean, 18329/262144 files, 269325/1048576 blocks
+done.
+[    2.376997] grepstub : Result from xenbus_read, 1
+[    2.485550] EXT4-fs (xvda2): mounted filesystem with ordered data mode. Opts: (null)
+done.
+Begin: Running /scripts/local-bottom ... done.
+Begin: Running /scripts/init-bottom ... done.
+[    2.598379] systemd[1]: Failed to look up module alias 'autofs4': Function not implemented
+[    2.599031] cgroup2: Unknown parameter 'memory_recursiveprot'
+[    2.601067] systemd[1]: systemd 247.3-6 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +ZSTD +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=unified)
+[    2.601155] systemd[1]: Detected virtualization xen.
+[    2.601165] systemd[1]: Detected architecture x86-64.
+
+Welcome to [1mDebian GNU/Linux 11 (bullseye)[0m!
+
+[    2.601956] systemd[1]: Set hostname to <xenguest>.
+[    2.737824] systemd[1]: Queued start job for default target Graphical Interface.
+[    2.739386] systemd[1]: Created slice system-getty.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-getty.slice[0m.
+[    2.739815] systemd[1]: Created slice system-modprobe.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-modprobe.slice[0m.
+[    2.740187] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-serial\x2dgetty.slice[0m.
+[    2.740426] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+[    2.740616] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39mForward Password R…uests to Wall Directory Watch[0m.
+[    2.740741] systemd[1]: Starting of Arbitrary Executable File Formats File System Automount Point not supported.
+[[0;1;38;5;185mUNSUPP[0m] Starting of [0;1;39mArbitrary Exec…Automount Point[0m not supported.
+[    2.740878] systemd[1]: Reached target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal Encrypted Volumes[0m.
+[    2.741014] systemd[1]: Reached target Paths.
+[[0;32m  OK  [0m] Reached target [0;1;39mPaths[0m.
+[    2.741106] systemd[1]: Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems[0m.
+[    2.741183] systemd[1]: Reached target Slices.
+[[0;32m  OK  [0m] Reached target [0;1;39mSlices[0m.
+[    2.741459] systemd[1]: Listening on Syslog Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mSyslog Socket[0m.
+[    2.741664] systemd[1]: Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mfsck to fsckd communication Socket[0m.
+[    2.741825] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on [0;1;39minitctl Compatibility Named Pipe[0m.
+[    2.742116] systemd[1]: Listening on Journal Audit Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Audit Socket[0m.
+[    2.742320] systemd[1]: Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket (/dev/log)[0m.
+[    2.742542] systemd[1]: Listening on Journal Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket[0m.
+[    2.743065] systemd[1]: Listening on udev Control Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Control Socket[0m.
+[    2.743274] systemd[1]: Listening on udev Kernel Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Kernel Socket[0m.
+[    2.743394] systemd[1]: Reached target Sockets.
+[[0;32m  OK  [0m] Reached target [0;1;39mSockets[0m.
+[    2.743612] systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+[    2.744857] systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting [0;1;39mPOSIX Message Queue File System[0m...
+[    2.746232] systemd[1]: Mounting Kernel Debug File System...
+         Mounting [0;1;39mKernel Debug File System[0m...
+[    2.747633] systemd[1]: Mounting Kernel Trace File System...
+         Mounting [0;1;39mKernel Trace File System[0m...
+[    2.747830] systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+[    2.750865] systemd[1]: Starting Load Kernel Module configfs...
+         Starting [0;1;39mLoad Kernel Module configfs[0m...
+[    2.761625] systemd[1]: Starting Load Kernel Module fuse...
+         Starting [0;1;39mLoad Kernel Module fuse[0m...
+[    2.768302] systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+[    2.768362] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    2.770929] systemd[1]: Starting Journal Service...
+         Starting [0;1;39mJournal Service[0m...
+[    2.845192] systemd[1]: Starting Load Kernel Modules...
+         Starting [0;1;39mLoad Kernel Modules[0m...
+[    2.846477] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting [0;1;39mRemount Root and Kernel File Systems[0m...
+[    2.858914] systemd[1]: Starting Coldplug All udev Devices...
+         Starting [0;1;39mColdplug All udev Devices[0m...
+[    2.866020] systemd[1]: Mounted POSIX Message Queue File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mPOSIX Message Queue File System[0m.
+[    2.875573] systemd[1]: Mounted Kernel Debug File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Debug File System[0m.
+[    2.875879] systemd[1]: Mounted Kernel Trace File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Trace File System[0m.
+[    2.880012] systemd[1]: modprobe@configfs.service: Succeeded.
+[    2.880267] systemd[1]: Finished Load Kernel Module configfs.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module configfs[0m.
+[    2.880765] systemd[1]: modprobe@fuse.service: Succeeded.
+[    2.880997] systemd[1]: Finished Load Kernel Module fuse.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module fuse[0m.
+[    2.884702] systemd[1]: Mounting FUSE Control File System...
+         Mounting [0;1;39mFUSE Control File System[0m...
+[    2.891468] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting [0;1;39mKernel Configuration File System[0m...
+[    2.892301] systemd[1]: Finished Load Kernel Modules.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Modules[0m.
+[    2.919416] EXT4-fs (xvda2): re-mounted. Opts: errors=remount-ro
+[    2.939856] systemd[1]: Finished Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Finished [0;1;39mRemount Root and Kernel File Systems[0m.
+[    2.940471] systemd[1]: Mounted Kernel Configuration File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Configuration File System[0m.
+[    2.941559] systemd[1]: Mounted FUSE Control File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mFUSE Control File System[0m.
+[    2.947430] systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+[    2.947481] systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+[    2.948591] systemd[1]: Starting Load/Save Random Seed...
+         Starting [0;1;39mLoad/Save Random Seed[0m...
+[    2.953052] systemd[1]: Starting Apply Kernel Variables...
+         Starting [0;1;39mApply Kernel Variables[0m...
+[    2.974473] systemd[1]: Starting Create System Users...
+         Starting [0;1;39mCreate System Users[0m...
+[    2.982547] systemd[1]: Finished Load/Save Random Seed.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad/Save Random Seed[0m.
+[    2.982793] systemd[1]: Condition check resulted in First Boot Complete being skipped.
+[    3.062182] systemd[1]: Started Journal Service.
+[[0;32m  OK  [0m] Started [0;1;39mJournal Service[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mApply Kernel Variables[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate System Users[0m.
+         Starting [0;1;39mFlush Journal to Persistent Storage[0m...
+         Starting [0;1;39mCreate Static Device Nodes in /dev[0m...
+[    3.101399] systemd-journald[204]: Received client request to flush runtime journal.
+[    3.124718] systemd-journald[204]: File /var/log/journal/d4355e321ab14d089722216f21583a12/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[[0;32m  OK  [0m] Finished [0;1;39mColdplug All udev Devices[0m.
+         Starting [0;1;39mHelper to synchronize boot up for ifupdown[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Static Device Nodes in /dev[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems (Pre)[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems[0m.
+         Starting [0;1;39mRule-based Manage…for Device Events and Files[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mFlush Journal to Persistent Storage[0m.
+         Starting [0;1;39mCreate Volatile Files and Directories[0m...
+[[0;32m  OK  [0m] Started [0;1;39mRule-based Manager for Device Events and Files[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Volatile Files and Directories[0m.
+         Starting [0;1;39mNetwork Time Synchronization[0m...
+         Starting [0;1;39mUpdate UTMP about System Boot/Shutdown[0m...
+[    3.250825] proc: Bad value for 'hidepid'
+[[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Boot/Shutdown[0m.
+[[0;32m  OK  [0m] Started [0;1;39mNetwork Time Synchronization[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Set[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Synchronized[0m.
+[    3.469097] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-sg, fmt : %u
+[    3.469108] Grepstub xb_write sending data
+[    3.469134] Grepstub xb_write sending data
+[    3.469581] grepstub : Result from xenbus_read, 1
+[    3.469590] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-ipv6-csum-offload, fmt : %u
+[    3.469601] Grepstub xb_write sending data
+[    3.469608] Grepstub xb_write sending data
+[    3.470665] grepstub : Result from xenbus_read, 1
+[    3.470688] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv4, fmt : %u
+[    3.470700] Grepstub xb_write sending data
+[    3.470716] Grepstub xb_write sending data
+[    3.470853] grepstub : Result from xenbus_read, 1
+[    3.470870] grepstub : Reading dir : /local/domain/0/backend/vif/11/0, node : feature-gso-tcpv6, fmt : %u
+[    3.470880] Grepstub xb_write sending data
+[    3.470896] Grepstub xb_write sending data
+[[0;32m  OK  [0m] Listening on [0;1;39mLoad/Save RF …itch Status /dev/rfkill Watch[0m.
+[[0;32m  OK  [0m] Found device [0;1;39m/dev/hvc0[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mHelper to synchronize boot up for ifupdown[0m.
+         Starting [0;1;39mRaise network interfaces[0m...
+[[0m[0;31m*     [0m] (1 of 2) A start job is running for…ise network interfaces (3s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…ise network interfaces (3s / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…ise network interfaces (4s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (4s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (5s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (6s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…ise network interfaces (6s / 5min)
+M[K[     [0;31m*[0m] (1 of 2) A start job is running for…ise network interfaces (7s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…ise network interfaces (7s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (8s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (8s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (9s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (10s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…se network interfaces (10s / 5min)
+M[K[[0m[0;31m*     [0m] (1 of 2) A start job is running for…se network interfaces (11s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (11s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 2) A start job is running for /dev/xvda1 (12s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (13s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (13s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (14s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (14s / 5min)
+M[K[     [0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (15s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (15s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (16s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (17s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 2) A start job is running for…se network interfaces (17s / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (18s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (18s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (2 of 2) A start job is running for /dev/xvda1 (19s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (20s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (20s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 2) A start job is running for…se network interfaces (21s / 5min)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (21s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (22s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (22s / 1min 30s)
+M[K[     [0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (23s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (23s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (24s / 5min)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (24s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (25s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 2) A start job is running for /dev/xvda1 (25s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (26s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (1 of 2) A start job is running for…se network interfaces (26s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…se network interfaces (27s / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (27s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (28s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (28s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (29s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (29s / 5min)
+M[K[     [0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (30s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (30s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (31s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (31s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (32s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (32s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…se network interfaces (33s / 5min)
+M[K[[0m[0;31m*     [0m] (1 of 2) A start job is running for…se network interfaces (33s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (34s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 2) A start job is running for /dev/xvda1 (34s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (35s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (35s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (36s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (36s / 5min)
+M[K[     [0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (37s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (37s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (38s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (38s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 2) A start job is running for…se network interfaces (39s / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (39s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (40s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (2 of 2) A start job is running for /dev/xvda1 (40s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (41s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (41s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 2) A start job is running for…se network interfaces (42s / 5min)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (42s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (43s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (43s / 1min 30s)
+M[K[     [0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (44s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (44s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (45s / 5min)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (45s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (46s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 2) A start job is running for /dev/xvda1 (46s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (47s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (1 of 2) A start job is running for…se network interfaces (47s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…se network interfaces (48s / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (48s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (49s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (49s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (50s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (50s / 5min)
+M[K[     [0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (51s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (51s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (52s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (2 of 2) A start job is running for /dev/xvda1 (52s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (53s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…se network interfaces (53s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (1 of 2) A start job is running for…se network interfaces (54s / 5min)
+M[K[[0m[0;31m*     [0m] (1 of 2) A start job is running for…se network interfaces (54s / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (55s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (2 of 2) A start job is running for /dev/xvda1 (55s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (2 of 2) A start job is running for /dev/xvda1 (56s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (56s / 5min)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (1 of 2) A start job is running for…se network interfaces (57s / 5min)
+M[K[    [0;31m*[0;1;31m*[0m] (1 of 2) A start job is running for…se network interfaces (57s / 5min)
+M[K[     [0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (58s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (58s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] (2 of 2) A start job is running for /dev/xvda1 (59s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] (1 of 2) A start job is running for…se network interfaces (59s / 5min)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] (1 of 2) A start job is running for…e network interfaces (1min / 5min)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] (1 of 2) A start job is running for…e network interfaces (1min / 5min)
+M[K[[0;1;31m*[0m[0;31m*    [0m] (2 of 2) A start job is running for /dev/xvda1 (1min 1s / 1min 30s)
+M[K[[0m[0;31m*     [0m] (2 of 2) A start job is running for /dev/xvda1 (1min 1s / 1min 30s)
+M[K[[0;32m  OK  [0m] Finished [0;1;39mRaise network interfaces[0m.
+[K[[0;32m  OK  [0m] Reached target [0;1;39mNetwork[0m.
+[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 4s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 4s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 5s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 5s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 6s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 6s / 1min 30s)
+M[K[     [0;31m*[0m] A start job is running for /dev/xvda1 (1min 7s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 7s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 8s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 8s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 9s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 9s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 10s / 1min 30s)
+M[K[[0m[0;31m*     [0m] A start job is running for /dev/xvda1 (1min 10s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 11s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 11s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 12s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 12s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 13s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 13s / 1min 30s)
+M[K[     [0;31m*[0m] A start job is running for /dev/xvda1 (1min 14s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 14s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 15s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 15s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 16s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 16s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 17s / 1min 30s)
+M[K[[0m[0;31m*     [0m] A start job is running for /dev/xvda1 (1min 17s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 18s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 18s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 19s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 19s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 20s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 20s / 1min 30s)
+M[K[     [0;31m*[0m] A start job is running for /dev/xvda1 (1min 21s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 21s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 22s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 22s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 23s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 23s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 24s / 1min 30s)
+M[K[[0m[0;31m*     [0m] A start job is running for /dev/xvda1 (1min 24s / 1min 30s)
+M[K[[0;1;31m*[0m[0;31m*    [0m] A start job is running for /dev/xvda1 (1min 25s / 1min 30s)
+M[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A start job is running for /dev/xvda1 (1min 25s / 1min 30s)
+M[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A start job is running for /dev/xvda1 (1min 26s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 26s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 27s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 27s / 1min 30s)
+M[K[     [0;31m*[0m] A start job is running for /dev/xvda1 (1min 28s / 1min 30s)
+M[K[    [0;31m*[0;1;31m*[0m] A start job is running for /dev/xvda1 (1min 28s / 1min 30s)
+M[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A start job is running for /dev/xvda1 (1min 29s / 1min 30s)
+M[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A start job is running for /dev/xvda1 (1min 29s / 1min 30s)
+M[K[[0;1;31m TIME [0m] Timed out waiting for device [0;1;39m/dev/xvda1[0m.
+[K[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39m/dev/xvda1[0m.
+[[0;1;38;5;185mDEPEND[0m] Dependency failed for [0;1;39mSwap[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Initialization[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt download activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt upgrade and clean activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mPeriodic ext4 Onli…ata Check for All Filesystems[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDiscard unused blocks once a week[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily rotation of log files[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily Cleanup of Temporary Directories[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mBasic System[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mTimers[0m.
+[[0;32m  OK  [0m] Started [0;1;39mRegular background program processing daemon[0m.
+         Starting [0;1;39mRemove Stale Onli…t4 Metadata Check Snapshots[0m...
+         Starting [0;1;39mgetty on tty2-tty…nd logind are not available[0m...
+         Starting [0;1;39mSystem Logging Service[0m...
+         Starting [0;1;39mOpenBSD Secure Shell server[0m...
+         Starting [0;1;39mPermit User Sessions[0m...
+[[0;32m  OK  [0m] Started [0;1;39mSystem Logging Service[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mPermit User Sessions[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mgetty on tty2-tty… and logind are not available[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mRemove Stale Onli…ext4 Metadata Check Snapshots[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty1[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty2[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty3[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty4[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty5[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty6[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSerial Getty on hvc0[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLogin Prompts[0m.
+[[0;32m  OK  [0m] Started [0;1;39mOpenBSD Secure Shell server[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mMulti-User System[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mGraphical Interface[0m.
+         Starting [0;1;39mUpdate UTMP about System Runlevel Changes[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Runlevel Changes[0m.
+
+Debian GNU/Linux 11 xenguest hvc0
+
+xenguest login: 

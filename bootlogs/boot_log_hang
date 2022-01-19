@@ -1,0 +1,187 @@
+Parsing config from /etc/xen/xenguest.cfg
+[    0.000000] Linux version 5.4.151custom_anish+ (root@pop-os) (gcc version 11.2.0 (Ubuntu 11.2.0-7ubuntu2)) #40 SMP Tue Jan 18 00:41:08 EST 2022 ()
+[    0.000000] Command line: root=/dev/xvda2 ro elevator=noop
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] Disabled fast string operations
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] ACPI in unprivileged domain disabled
+[    0.000000] Released 0 page(s)
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] Xen: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] Xen: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] Xen: [mem 0x0000000000100000-0x000000013b7fffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] DMI not present or invalid.
+[    0.000000] Hypervisor detected: Xen PV
+[    0.128968] tsc: Fast TSC calibration failed
+[    0.128970] tsc: Detected 2591.964 MHz processor
+[    0.128986] last_pfn = 0x13b800 max_arch_pfn = 0x400000000
+[    0.128987] Disabled
+[    0.128988] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.129004] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WC  WP  UC  UC  
+[    0.129005] last_pfn = 0x100000 max_arch_pfn = 0x400000000
+[    0.215880] check: Scanning 1 areas for low memory corruption
+[    0.215888] Kernel/User page tables isolation: disabled on XEN PV.
+[    0.844649] RAMDISK: [mem 0x04000000-0x07b80fff]
+[    0.844707] NUMA turned off
+[    0.844708] Faking a node at [mem 0x0000000000000000-0x000000013b7fffff]
+[    0.844717] NODE_DATA(0) allocated [mem 0x13ae22000-0x13ae4bfff]
+[    0.856446] Zone ranges:
+[    0.856448]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.856449]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.856450]   Normal   [mem 0x0000000100000000-0x000000013b7fffff]
+[    0.856451]   Device   empty
+[    0.856452] Movable zone start for each node
+[    0.856454] Early memory node ranges
+[    0.856455]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.856456]   node   0: [mem 0x0000000000100000-0x000000013b7fffff]
+[    0.856564] Zeroed struct page in unavailable ranges: 18529 pages
+[    0.856565] Initmem setup node 0 [mem 0x0000000000001000-0x000000013b7fffff]
+[    0.870424] p2m virtual area at (____ptrval____), size is 40000000
+[    0.952566] Remapped 0 page(s)
+[    0.952653] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.952660] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.952661] PM: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[    0.952662] Cannot find an available gap in the 32-bit address range
+[    0.952663] PCI devices with unassigned 32-bit BARs may not work!
+[    0.952664] [mem 0x13b900000-0x13bcfffff] available for PCI devices
+[    0.952666] Booting paravirtualized kernel on Xen
+[    0.952667] Xen version: 4.11.4-pre (preserve-AD)
+[    0.952669] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.952673] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+[    0.952780] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
+[    0.952819] Built 1 zonelists, mobility grouping on.  Total pages: 1271978
+[    0.952820] Policy zone: Normal
+[    0.952822] Kernel command line: root=/dev/xvda2 ro elevator=noop
+[    0.953196] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    0.953371] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.953550] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.964469] Memory: 4951688K/5168764K available (16387K kernel code, 3654K rwdata, 9320K rodata, 2764K init, 5728K bss, 217076K reserved, 0K cma-reserved)
+[    0.964478] random: get_random_u64 called from __kmem_cache_create+0x42/0x6f0 with crng_init=0
+[    0.964703] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.965004] ftrace: allocating 43027 entries in 169 pages
+[    0.977723] rcu: Hierarchical RCU implementation.
+[    0.977725] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
+[    0.977726] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.977727] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.981614] Using NULL legacy PIC
+[    0.981616] NR_IRQS: 524544, nr_irqs: 32, preallocated irqs: 0
+[    0.981660] xen:events: Using FIFO-based ABI
+[    0.981707] random: crng done (trusting CPU's manufacturer)
+[    0.981735] Console: colour dummy device 80x25
+[    0.981789] printk: console [tty0] enabled
+[    0.982042] printk: console [hvc0] enabled
+[    0.982070] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.982128] installing Xen timer for CPU 0
+[    0.982401] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255c950f28f, max_idle_ns: 440795327585 ns
+[    0.982443] Calibrating delay loop (skipped), value calculated using timer frequency.. 5183.92 BogoMIPS (lpj=10367856)
+[    0.982450] pid_max: default: 32768 minimum: 301
+[    0.982521] LSM: Security Framework initializing
+[    0.982542] Yama: becoming mindful.
+[    0.982598] AppArmor: AppArmor initialized
+[    0.982709] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.982723] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.982762] *** VALIDATE tmpfs ***
+[    0.982972] *** VALIDATE proc ***
+[    0.983113] *** VALIDATE cgroup1 ***
+[    0.983129] *** VALIDATE cgroup2 ***
+[    0.983222] Disabled fast string operations
+[    0.983271] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.983275] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.983283] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.983287] Spectre V2 : Mitigation: Full generic retpoline
+[    0.983290] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.983294] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    0.983297] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.983302] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+[    0.983307] MDS: Mitigation: Clear CPU buffers
+[    1.025577] Freeing SMP alternatives memory: 40K
+[    1.027080] VPMU disabled by hypervisor.
+[    1.027275] Performance Events: unsupported p6 CPU model 165 no PMU driver, software events only.
+[    1.027345] rcu: Hierarchical SRCU implementation.
+[    1.028192] NMI watchdog: Perf NMI watchdog permanently disabled
+[    1.028242] smp: Bringing up secondary CPUs ...
+[    1.028247] smp: Brought up 1 node, 1 CPU
+[    1.028250] smpboot: Max logical packages: 1
+[    1.028544] devtmpfs: initialized
+[    1.028588] x86/mm: Memory block size: 128MB
+[    1.028923] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    1.028932] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.028966] pinctrl core: initialized pinctrl subsystem
+[    1.029107] NET: Registered protocol family 16
+[    1.029122] xen:grant_table: Grant tables using version 1 layout
+[    1.029134] Grant table initialized
+[    1.029157] audit: initializing netlink subsys (disabled)
+[    1.029236] audit: type=2000 audit(1642484842.596:1): state=initialized audit_enabled=0 res=1
+[    1.029315] EISA bus registered
+[    1.029354] Grepstub xb_write sending data f
+[    1.029370] Grepstub xb_write sending data cpu
+[    1.029466] Generated xb_write data l(��������;xM#�~aٜ�u?�%6�������<���a	cd�&���s���6����D�'�P*6X5�aX�B�T����u��F��:C!��M�-3��^����z�0��m��i�yEE����<��q!�H�����'/v����\�/�$=h���/I[����U�y=�Ԣ�e�0�u�'Kf����j�1s2�e�ѰNr�2��g֣	Uq��%������ ��/�䅉:˿-���.c�fހT㞏4#�=�1Z���f˂��R]�7D�^ez
+                                                                                       w�Sh��C
+                                                                                              #Z���	����tȼ3�G�~�ث����F��8\�՚�$���1=�Á�?
+                                                                                                                                           &{Z���zi�A�.5b�䟂d��;<eI(��Ԛ���L��J-y@"�]�C�a]��7%6��9�Q�
+[    1.029469] Grepstub xb_write sending data l(��������;xM#�~aٜ�u?�%6�������<���a	cd�&���s���6����D�'�P*6X5�aX�B�T����u��F��:C!��M�-3��^����z�0��m��i�yEE����<��q!�H�����'/v����\�/�$=h���/I[����U�y=�'Kf����j�1s2�e�ѰNr�2��g֣	Uq��%������ ��/�䅉:˿-���.c�fހT㞏4#�=�1Z���f˂��R]�7D�^ez
+                                                                                       w�Sh��C
+                                                                                              #Z���	����tȼ3�G�~�ث����F��8\�՚�$���1=�Á�?
+                                                                                                                                           &{Z���zi�A�.5b�䟂d��;<eI(��Ԛ���L��J-y@"�]�C�a]��7%6��9�Q�
+[    1.030465] grepstub : Reading dir : cpu/0, node : availability, fmt : %15s
+[    1.030499] Grepstub xb_write sending data 
+[    1.030513] Grepstub xb_write sending data cpu/0/availability
+[    1.030520] grepstub : Result from xenbus_read, online
+[    1.031715] PCI: setting up Xen PCI frontend stub
+[    1.034591] fbcon: Taking over console
+[    1.034624] ACPI: Interpreter disabled.
+[    1.034639] xen:balloon: Initialising balloon driver
+[    1.034711] Grepstub xb_write sending data 
+[    1.034727] Grepstub xb_write sending data memory/target
+[    1.034732] Grepstub xb_write sending data FFFFFFFF82E3�040
+[    1.034743] Grepstub xb_write sending data 
+[    1.034743] Generated xb_write data �J:��OF��6_.�we[�+NN�.J����P�&��
+[    1.034743] Grepstub xb_write sending data �J:��OF��6_.�we[�+NN�.J����P�&��
+[    1.034743] Grepstub xb_write sending data FFFFFFFF82E36100
+[    1.034743] xen:manage: Failed to set shutdown watcher
+[    1.034743] Grepstub xb_write sending data 
+[    1.034743] Generated xb_write data 8Uȣ
+                                          j�Q[�QO����� {�\	�<D:_�Q�Sf��=�K�&�:ԛ�m�ž���5,�]+'M}��/8�����	�����'�8��'ŝ!rh�U����t�
+[    1.034743] N�msA�~Ũn�(�vm�a�g��
+                                   ���?Ƒv�-'d�`D�ѿ!��1�$�df�K`q�w]b�~�E��
+�c#�[�r����7�� �.j{J�A�ZϿ�eIO'!���۫�i##�W'm�$[�?���=�T:���;�_V�
+JK����p���h��^K                                               �*�c�#Sr'��3�-�+?-1y�v$�� ����ɠ�Z݀������{�� Z%fz�π6}KM���f����_�F���
+[    1.034743] Grepstub xb_write sending data 8Uȣ
+                                                 j�Q[�QO����� {�\	�<D:_�Q�Sf��=�K�&�:ԛ�m�ž���5,�]+'M}��/8�����	�����'�8��'ŝ!rh�U����t�
+[    1.034743] N�msA�~Ũn�(�vm�a�g��
+                                   ���?Ƒv�-'d�`D�ѿ!��1�$�df�K`q�w]b�~�E��
+�c#�[�r����7�� �.j{J�A�ZϿ�eIO'!���۫�i##�W'm�$[�?���=�T:���;�_V�
+JK����p���h��^K                                               �*�c�#Sr'��3�-�+?-1y�v$�� ����ɠ�Z݀������{�� Z%fz�π6}KM���f����_�F���
+[    1.034743] Grepstub xb_write sending data 
+[    1.034743] Grepstub xb_write sending data backend
+[    1.034743] Grepstub xb_write sending data FFFFFFFF82E�A3C0
+[    1.034743] Grepstub xb_write sending data �
+[    1.034743] Grepstub xb_write sending data de_ice
+[    1.034743] Generated xb_write data ��;}����8zIx���(3�y��6
+�U�[�d��#�*�4] �lN��jZz��/��>Ŝ�eYb
+[    1.034743] �<�w�MK�a�n�t��i#��|�H��rE��󦿉^AW�z�{��@#yX'=~
+[    1.034743] .������h"��[<_"b-�A��]d� �vĒ����5����
+                                                     ^q=����{v��+ɚ7ڈI�,,6z�U���И!yE��y�?r��t��[��,�\�uG���}Q�
+                                                                                                             ��^��GrG���3	��t�S� ���\y
+                                                                                                                                            �K��s�>x0'����Z���Ҷ6�#o@L
+[    1.034743] :L�@�^*_�����
+[    1.034743] Grepstub xb_write sending data ��;}����8zIx���(3�y��6
+�U�[�d��#�*�4] �lN��jZz��/��>Ŝ�eYb
+[    1.034743] �<�w�MK�a�n�t��i#��|�H��rE��󦿉^AW�z�{��@#yX'=~
+[    1.034743] .������h"��[<_"b-�A��]d� �vĒ����5����
+                                                     ^q=����{v��+ɚ7ڈI�,,6z�U���И!yE��y�?r��t��[��,�\�uG���}Q�
+                                                                                                             ��^��GrG���3	��t�S� ���\y
+                                                                                                                                            �K��s�>x0'����Z���Ҷ6�#o@L
+[    1.034743] :L�@�^*_�����
+[    1.034743] Grepstub xb_write sending data device
+/// Hangs hereafter

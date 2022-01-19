@@ -1,0 +1,623 @@
+Parsing config from /etc/xen/xenguest.cfg
+[    0.000000] Linux version 5.4.151custom_anish+ (root@pop-os) (gcc version 11.2.0 (Ubuntu 11.2.0-7ubuntu2)) #58 SMP Tue Jan 18 17:41:23 EST 2022 ()
+[    0.000000] Command line: root=/dev/xvda2 ro elevator=noop
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] Disabled fast string operations
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] ACPI in unprivileged domain disabled
+[    0.000000] Released 0 page(s)
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] Xen: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] Xen: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] Xen: [mem 0x0000000000100000-0x000000013b7fffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] DMI not present or invalid.
+[    0.000000] Hypervisor detected: Xen PV
+[    0.118663] tsc: Fast TSC calibration failed
+[    0.118665] tsc: Detected 2591.996 MHz processor
+[    0.118680] last_pfn = 0x13b800 max_arch_pfn = 0x400000000
+[    0.118681] Disabled
+[    0.118682] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.118688] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WC  WP  UC  UC  
+[    0.118689] last_pfn = 0x100000 max_arch_pfn = 0x400000000
+[    0.210510] check: Scanning 1 areas for low memory corruption
+[    0.210518] Kernel/User page tables isolation: disabled on XEN PV.
+[    0.838224] RAMDISK: [mem 0x04000000-0x07b80fff]
+[    0.838282] NUMA turned off
+[    0.838283] Faking a node at [mem 0x0000000000000000-0x000000013b7fffff]
+[    0.838291] NODE_DATA(0) allocated [mem 0x13ae22000-0x13ae4bfff]
+[    0.849816] Zone ranges:
+[    0.849818]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.849819]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.849820]   Normal   [mem 0x0000000100000000-0x000000013b7fffff]
+[    0.849821]   Device   empty
+[    0.849822] Movable zone start for each node
+[    0.849824] Early memory node ranges
+[    0.849825]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.849826]   node   0: [mem 0x0000000000100000-0x000000013b7fffff]
+[    0.849935] Zeroed struct page in unavailable ranges: 18529 pages
+[    0.849936] Initmem setup node 0 [mem 0x0000000000001000-0x000000013b7fffff]
+[    0.863672] p2m virtual area at (____ptrval____), size is 40000000
+[    0.945514] Remapped 0 page(s)
+[    0.945600] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.945607] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.945608] PM: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[    0.945609] Cannot find an available gap in the 32-bit address range
+[    0.945609] PCI devices with unassigned 32-bit BARs may not work!
+[    0.945610] [mem 0x13b900000-0x13bcfffff] available for PCI devices
+[    0.945612] Booting paravirtualized kernel on Xen
+[    0.945613] Xen version: 4.11.4-pre (preserve-AD)
+[    0.945616] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.945620] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+[    0.945728] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
+[    0.945768] Built 1 zonelists, mobility grouping on.  Total pages: 1271978
+[    0.945769] Policy zone: Normal
+[    0.945771] Kernel command line: root=/dev/xvda2 ro elevator=noop
+[    0.946124] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    0.946286] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.946423] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.957136] Memory: 4951688K/5168764K available (16387K kernel code, 3654K rwdata, 9320K rodata, 2764K init, 5728K bss, 217076K reserved, 0K cma-reserved)
+[    0.957144] random: get_random_u64 called from __kmem_cache_create+0x42/0x6f0 with crng_init=0
+[    0.957368] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.957667] ftrace: allocating 43028 entries in 169 pages
+[    0.970394] rcu: Hierarchical RCU implementation.
+[    0.970396] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
+[    0.970398] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.970398] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.974158] Using NULL legacy PIC
+[    0.974159] NR_IRQS: 524544, nr_irqs: 32, preallocated irqs: 0
+[    0.974203] xen:events: Using FIFO-based ABI
+[    0.974249] random: crng done (trusting CPU's manufacturer)
+[    0.974278] Console: colour dummy device 80x25
+[    0.974331] printk: console [tty0] enabled
+[    0.974578] printk: console [hvc0] enabled
+[    0.974604] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.974631] installing Xen timer for CPU 0
+[    0.974662] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255cb30caa3, max_idle_ns: 440795217292 ns
+[    0.974682] Calibrating delay loop (skipped), value calculated using timer frequency.. 5183.99 BogoMIPS (lpj=10367984)
+[    0.974688] pid_max: default: 32768 minimum: 301
+[    0.974771] LSM: Security Framework initializing
+[    0.974806] Yama: becoming mindful.
+[    0.974863] AppArmor: AppArmor initialized
+[    0.974986] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.975014] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.975055] *** VALIDATE tmpfs ***
+[    0.975266] *** VALIDATE proc ***
+[    0.975407] *** VALIDATE cgroup1 ***
+[    0.975423] *** VALIDATE cgroup2 ***
+[    0.975515] Disabled fast string operations
+[    0.975576] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.975593] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.975602] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.975607] Spectre V2 : Mitigation: Full generic retpoline
+[    0.975610] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.975613] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    0.975628] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.975633] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+[    0.975638] MDS: Mitigation: Clear CPU buffers
+[    1.018381] Freeing SMP alternatives memory: 40K
+[    1.019699] VPMU disabled by hypervisor.
+[    1.019843] Performance Events: unsupported p6 CPU model 165 no PMU driver, software events only.
+[    1.019899] rcu: Hierarchical SRCU implementation.
+[    1.020255] NMI watchdog: Perf NMI watchdog permanently disabled
+[    1.020293] smp: Bringing up secondary CPUs ...
+[    1.020297] smp: Brought up 1 node, 1 CPU
+[    1.020300] smpboot: Max logical packages: 1
+[    1.020551] devtmpfs: initialized
+[    1.020586] x86/mm: Memory block size: 128MB
+[    1.020912] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    1.020921] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.020954] pinctrl core: initialized pinctrl subsystem
+[    1.021096] NET: Registered protocol family 16
+[    1.021111] xen:grant_table: Grant tables using version 1 layout
+[    1.021122] Grant table initialized
+[    1.021146] audit: initializing netlink subsys (disabled)
+[    1.021226] audit: type=2000 audit(1642545816.296:1): state=initialized audit_enabled=0 res=1
+[    1.021304] EISA bus registered
+[    1.021344] Grepstub xb_write sending data
+[    1.021359] Grepstub xb_write sending data
+[    1.021363] Grepstub xb_write sending data
+[    1.022712] grepstub : Reading dir : cpu/0, node : availability, fmt : %15s
+[    1.022727] Grepstub xb_write sending data
+[    1.022731] Grepstub xb_write sending data
+[    1.022737] grepstub : Result from xenbus_read, online
+[    1.023980] PCI: setting up Xen PCI frontend stub
+[    1.026716] fbcon: Taking over console
+[    1.026725] ACPI: Interpreter disabled.
+[    1.026736] xen:balloon: Initialising balloon driver
+[    1.026787] Grepstub xb_write sending data
+[    1.026807] Grepstub xb_write sending data
+[    1.026811] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] grepstub : Reading dir : memory, node : target, fmt : %llu
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] grepstub : Result from xenbus_read, 5169152
+[    1.026819] grepstub : Reading dir : memory, node : static-max, fmt : %llu
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Random seed : 770881018
+[    1.026819] Modifying to, and finally sending 1
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] grepstub : Result from xenbus_read, 5169152
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] grepstub : Writing transaction : 0 ,dir : control, node : feature-poweroff, buf : 1
+[    1.026819] Random seed : -570722665
+[    1.026819] Modifying to, and finally sending 1
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] Grepstub xb_write sending data
+[    1.026819] grepstub : Writing transaction : 0 ,dir : control, node : feature-reboot, buf : 1
+[    1.026819] Random seed : -939048694
+[    1.026819] Modifying to, and finally sending 1
+[    1.030713] Grepstub xb_write sending data
+[    1.030741] Grepstub xb_write sending data
+[    1.030749] Grepstub xb_write sending data
+[    1.030752] Grepstub xb_write sending data
+[    1.030754] Grepstub xb_write sending data
+[    1.030760] Grepstub xb_write sending data
+[    1.030760] Grepstub xb_write sending data
+[    1.030760] grepstub : Writing transaction : 0 ,dir : control, node : feature-suspend, buf : 1
+[    1.030760] grepstub : Reading dir : control, node : sysrq, fmt : %c
+[    1.030760] Grepstub xb_write sending data
+[    1.030760] Grepstub xb_write sending data
+[    1.030779] Grepstub xb_write sending data
+[    1.030781] Grepstub xb_write sending data
+[    1.030787] grepstub : Result from xenbus_read, (efault)
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.030787] Grepstub xb_write sending data
+[    1.034769] Grepstub xb_write sending data
+[    1.034769] Grepstub xb_write sending data
+[    1.034769] Grepstub xb_write sending data
+[    1.034769] iommu: Default domain type: Translated 
+[    1.034896] SCSI subsystem initialized
+[    1.034971] vgaarb: loaded
+[    1.035012] usbcore: registered new interface driver usbfs
+[    1.035018] usbcore: registered new interface driver hub
+[    1.035024] usbcore: registered new device driver usb
+[    1.035045] pps_core: LinuxPPS API ver. 1 registered
+[    1.035048] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.035054] PTP clock support registered
+[    1.035091] EDAC MC: Ver: 3.0.0
+[    1.035187] PCI: System does not support PCI
+[    1.035259] NetLabel: Initializing
+[    1.035262] NetLabel:  domain hash size = 128
+[    1.035264] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.035276] NetLabel:  unlabeled traffic allowed by default
+[    1.035988] clocksource: Switched to clocksource xen
+[    1.042426] *** VALIDATE bpf ***
+[    1.042486] VFS: Disk quotas dquot_6.6.0
+[    1.042498] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.042514] *** VALIDATE ramfs ***
+[    1.042517] hugetlbfs: disabling because there are no supported hugepage sizes
+[    1.042570] AppArmor: AppArmor Filesystem Enabled
+[    1.042581] pnp: PnP ACPI: disabled
+[    1.043458] thermal_sys: Registered thermal governor 'fair_share'
+[    1.043458] thermal_sys: Registered thermal governor 'bang_bang'
+[    1.043463] thermal_sys: Registered thermal governor 'step_wise'
+[    1.043466] thermal_sys: Registered thermal governor 'user_space'
+[    1.043469] thermal_sys: Registered thermal governor 'power_allocator'
+[    1.043512] NET: Registered protocol family 2
+[    1.043609] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.044287] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    1.044335] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    1.044467] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+[    1.044524] TCP: Hash tables configured (established 65536 bind 65536)
+[    1.044556] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.044577] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.044682] NET: Registered protocol family 1
+[    1.044689] NET: Registered protocol family 44
+[    1.044694] PCI: CLS 0 bytes, default 64
+[    1.044725] Trying to unpack rootfs image as initramfs...
+[    1.163086] Freeing initrd memory: 60932K
+[    1.163198] check: Scanning for low memory corruption every 60 seconds
+[    1.163440] Initialise system trusted keyrings
+[    1.163451] Key type blacklist registered
+[    1.163494] workingset: timestamp_bits=36 max_order=21 bucket_order=0
+[    1.164217] zbud: loaded
+[    1.164475] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.164596] fuse: init (API version 7.31)
+[    1.164609] *** VALIDATE fuse ***
+[    1.164612] *** VALIDATE fuse ***
+[    1.164676] Platform Keyring initialized
+[    1.231080] Key type asymmetric registered
+[    1.231101] Asymmetric key parser 'x509' registered
+[    1.231112] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    1.231153] io scheduler mq-deadline registered
+[    1.231222] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.231511] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    1.232468] Linux agpgart interface v0.103
+[    1.331025] loop: module loaded
+[    1.331143] Invalid max_queues (4), will use default max: 1.
+[    1.331204] Grepstub xb_write sending data
+[    1.331252] Grepstub xb_write sending data
+[    1.331924] Grepstub xb_write sending data
+[    1.331991] Grepstub xb_write sending data
+[    1.333964] Grepstub xb_write sending data
+[    1.334075] Grepstub xb_write sending data
+[    1.335333] grepstub : Reading dir : device/vbd/51714, node : virtual-device, fmt : %i
+[    1.335423] Grepstub xb_write sending data
+[    1.335485] Grepstub xb_write sending data
+[    1.336694] grepstub : Result from xenbus_read, 51714
+[    1.336784] Grepstub xb_write sending data
+[    1.336842] Grepstub xb_write sending data
+[    1.336855] Grepstub xb_write sending data
+[    1.338132] Grepstub xb_write sending data
+[    1.338201] Grepstub xb_write sending data
+[    1.338271] Grepstub xb_write sending data
+[    1.338282] Grepstub xb_write sending data
+[    1.339016] grepstub : Reading dir : /local/domain/0/backend/vbd/12/51714, node : max-ring-page-order, fmt : %u
+[    1.339061] Grepstub xb_write sending data
+[    1.339083] Grepstub xb_write sending data
+[    1.339112] grepstub going into mutate with iters = 15, len = 16
+[    1.339123] grepstub mutating str[11]=  with with 0xffffffd6
+[    1.339136] grepstub mutating str[14]=  with with 0xffffff9a
+[    1.339149] grepstub mutating str[2]=  with with 0xffffff84
+[    1.339161] grepstub mutating str[8]=  with with 0x62
+[    1.339172] grepstub mutating str[7]=  with with 0x7b
+[    1.339183] grepstub mutating str[8]=b with with 0x59
+[    1.339193] grepstub mutating str[8]=Y with with 0xffffffda
+[    1.339204] grepstub mutating str[13]=  with with 0x41
+[    1.339215] grepstub mutating str[14]=š with with 0x26
+[    1.339225] grepstub mutating str[4]=# with with 0xffffffd3
+[    1.339237] grepstub mutating str[4]=Ó with with 0xffffffb5
+[    1.339248] grepstub mutating str[4]=µ with with 0xffffffff
+[    1.339259] grepstub mutating str[13]=A with with 0x6c
+[    1.339270] grepstub mutating str[6]=  with with 0xffffffac
+[    1.339281] grepstub mutating str[10]=  with with 0xffffffc5
+[    1.339291] Grepstub xb_write sending data
+[    1.339303] Grepstub xb_write sending data
+[    1.340539] grepstub : Result from xenbus_read, 4
+[    1.340610] grepstub : Reading dir : /local/domain/0/backend/vbd/12/51714, node : multi-queue-max-queues, fmt : %u
+[    1.340636] Grepstub xb_write sending data
+[    1.340700] Grepstub xb_write sending data
+[    2.190995] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x255cb30caa3, max_idle_ns: 440795217292 ns
+[  243.630948] INFO: task swapper/0:1 blocked for more than 120 seconds.
+[  243.631053]       Not tainted 5.4.151custom_anish+ #58
+[  243.631132] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  243.631152] swapper/0       D    0     1      0 0x80004000
+[  243.631169] Call Trace:
+[  243.631192]  __schedule+0x2cb/0x880
+[  243.631206]  schedule+0x42/0xb0
+[  243.631223]  xs_talkv+0x254/0x3a0
+[  243.631237]  ? wait_woken+0x150/0x150
+[  243.631252]  xs_single+0x55/0x80
+[  243.631266]  xenbus_gather+0xf7/0x200
+[  243.631279]  ? _cond_resched+0x1a/0x50
+[  243.631291]  xenbus_read_otherend_details+0x38/0xd0
+[  243.631306]  read_backend_details+0x1c/0x20
+[  243.631317]  talk_to_otherend+0x5b/0x60
+[  243.631329]  xenbus_dev_probe+0x69/0x150
+[  243.631342]  xenbus_frontend_dev_probe+0x48/0x50
+[  243.631358]  really_probe+0x189/0x490
+[  243.631372]  driver_probe_device+0xd0/0x120
+[  243.631385]  device_driver_attach+0xcc/0xe0
+[  243.631398]  __driver_attach+0x8f/0x150
+[  243.631412]  ? device_driver_attach+0xe0/0xe0
+[  243.631426]  bus_for_each_dev+0x70/0xc0
+[  243.631440]  driver_attach+0x1e/0x20
+[  243.631452]  bus_add_driver+0x135/0x230
+[  243.631465]  driver_register+0x91/0x140
+[  243.631478]  xenbus_register_driver_common+0x2e/0x40
+[  243.631492]  __xenbus_register_frontend+0x2d/0x50
+[  243.631511]  xlblk_init+0x119/0x138
+[  243.631525]  ? loop_init+0x1e7/0x1e7
+[  243.631539]  do_one_initcall+0x4a/0x200
+[  243.631557]  kernel_init_freeable+0x2cd/0x379
+[  243.631573]  ? rest_init+0xe0/0xe0
+[  243.631587]  kernel_init+0xf/0x120
+[  243.631599]  ? rest_init+0xe0/0xe0
+[  243.631613]  ret_from_fork+0x35/0x40
+[  243.631632] INFO: task xenwatch:19 blocked for more than 120 seconds.
+[  243.631648]       Not tainted 5.4.151custom_anish+ #58
+[  243.631660] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  243.631677] xenwatch        D    0    19      2 0x80004000
+[  243.631691] Call Trace:
+[  243.631703]  __schedule+0x2cb/0x880
+[  243.631715]  schedule+0x42/0xb0
+[  243.631729]  xs_talkv+0x254/0x3a0
+[  243.631741]  ? wait_woken+0x150/0x150
+[  243.631756]  xs_single+0x55/0x80
+[  243.631769]  xenbus_read+0x52/0xa0
+[  243.631785]  xenbus_scanf+0x57/0xdb
+[  243.631800]  ? simple_strntoull+0x87/0xa0
+[  243.631815]  xenbus_read_unsigned+0x37/0x5a
+[  243.631828]  talk_to_blkback+0xad/0x1110
+[  243.631842]  ? xenbus_gather+0x1b9/0x200
+[  243.631857]  ? kfree+0xb8/0x280
+[  243.631869]  blkback_changed+0x46f/0xe60
+[  243.631882]  xenbus_otherend_changed+0x8f/0x130
+[  243.631897]  backend_changed+0x13/0x20
+[  243.631910]  xenwatch_thread+0xa6/0x180
+[  243.631922]  ? wait_woken+0x150/0x150
+[  243.631935]  kthread+0x120/0x140
+[  243.631948]  ? count_strings+0x50/0x50
+[  243.631960]  ? kthread_associate_blkcg+0xa0/0xa0
+[  243.631976]  ret_from_fork+0x35/0x40
+[  364.463006] INFO: task swapper/0:1 blocked for more than 241 seconds.
+[  364.463126]       Not tainted 5.4.151custom_anish+ #58
+[  364.463144] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  364.463168] swapper/0       D    0     1      0 0x80004000
+[  364.463189] Call Trace:
+[  364.463217]  __schedule+0x2cb/0x880
+[  364.463235]  schedule+0x42/0xb0
+[  364.463256]  xs_talkv+0x254/0x3a0
+[  364.463275]  ? wait_woken+0x150/0x150
+[  364.463294]  xs_single+0x55/0x80
+[  364.463312]  xenbus_gather+0xf7/0x200
+[  364.463329]  ? _cond_resched+0x1a/0x50
+[  364.463347]  xenbus_read_otherend_details+0x38/0xd0
+[  364.463367]  read_backend_details+0x1c/0x20
+[  364.463383]  talk_to_otherend+0x5b/0x60
+[  364.463398]  xenbus_dev_probe+0x69/0x150
+[  364.463414]  xenbus_frontend_dev_probe+0x48/0x50
+[  364.463434]  really_probe+0x189/0x490
+[  364.463451]  driver_probe_device+0xd0/0x120
+[  364.463467]  device_driver_attach+0xcc/0xe0
+[  364.463485]  __driver_attach+0x8f/0x150
+[  364.463502]  ? device_driver_attach+0xe0/0xe0
+[  364.463522]  bus_for_each_dev+0x70/0xc0
+[  364.463551]  driver_attach+0x1e/0x20
+[  364.463568]  bus_add_driver+0x135/0x230
+[  364.463586]  driver_register+0x91/0x140
+[  364.463603]  xenbus_register_driver_common+0x2e/0x40
+[  364.463622]  __xenbus_register_frontend+0x2d/0x50
+[  364.463647]  xlblk_init+0x119/0x138
+[  364.463665]  ? loop_init+0x1e7/0x1e7
+[  364.463684]  do_one_initcall+0x4a/0x200
+[  364.463706]  kernel_init_freeable+0x2cd/0x379
+[  364.463730]  ? rest_init+0xe0/0xe0
+[  364.463748]  kernel_init+0xf/0x120
+[  364.463764]  ? rest_init+0xe0/0xe0
+[  364.463782]  ret_from_fork+0x35/0x40
+[  364.463806] INFO: task xenwatch:19 blocked for more than 241 seconds.
+[  364.463827]       Not tainted 5.4.151custom_anish+ #58
+[  364.463842] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  364.463864] xenwatch        D    0    19      2 0x80004000
+[  364.463882] Call Trace:
+[  364.463898]  __schedule+0x2cb/0x880
+[  364.463916]  schedule+0x42/0xb0
+[  364.463934]  xs_talkv+0x254/0x3a0
+[  364.463952]  ? wait_woken+0x150/0x150
+[  364.463971]  xs_single+0x55/0x80
+[  364.463989]  xenbus_read+0x52/0xa0
+[  364.464010]  xenbus_scanf+0x57/0xdb
+[  364.464028]  ? simple_strntoull+0x87/0xa0
+[  364.464046]  xenbus_read_unsigned+0x37/0x5a
+[  364.464065]  talk_to_blkback+0xad/0x1110
+[  364.464086]  ? xenbus_gather+0x1b9/0x200
+[  364.464105]  ? kfree+0xb8/0x280
+[  364.464121]  blkback_changed+0x46f/0xe60
+[  364.464138]  xenbus_otherend_changed+0x8f/0x130
+[  364.464158]  backend_changed+0x13/0x20
+[  364.464177]  xenwatch_thread+0xa6/0x180
+[  364.464194]  ? wait_woken+0x150/0x150
+[  364.464295]  kthread+0x120/0x140
+[  364.464321]  ? count_strings+0x50/0x50
+[  364.464337]  ? kthread_associate_blkcg+0xa0/0xa0
+[  364.464357]  ret_from_fork+0x35/0x40
+[  485.294938] INFO: task swapper/0:1 blocked for more than 362 seconds.
+[  485.295046]       Not tainted 5.4.151custom_anish+ #58
+[  485.295059] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  485.295078] swapper/0       D    0     1      0 0x80004000
+[  485.295095] Call Trace:
+[  485.295117]  __schedule+0x2cb/0x880
+[  485.295131]  schedule+0x42/0xb0
+[  485.295147]  xs_talkv+0x254/0x3a0
+[  485.295162]  ? wait_woken+0x150/0x150
+[  485.295236]  xs_single+0x55/0x80
+[  485.295251]  xenbus_gather+0xf7/0x200
+[  485.295264]  ? _cond_resched+0x1a/0x50
+[  485.295277]  xenbus_read_otherend_details+0x38/0xd0
+[  485.295291]  read_backend_details+0x1c/0x20
+[  485.295303]  talk_to_otherend+0x5b/0x60
+[  485.295315]  xenbus_dev_probe+0x69/0x150
+[  485.295352]  xenbus_frontend_dev_probe+0x48/0x50
+[  485.295370]  really_probe+0x189/0x490
+[  485.295385]  driver_probe_device+0xd0/0x120
+[  485.295398]  device_driver_attach+0xcc/0xe0
+[  485.295412]  __driver_attach+0x8f/0x150
+[  485.295425]  ? device_driver_attach+0xe0/0xe0
+[  485.295440]  bus_for_each_dev+0x70/0xc0
+[  485.295453]  driver_attach+0x1e/0x20
+[  485.295466]  bus_add_driver+0x135/0x230
+[  485.295480]  driver_register+0x91/0x140
+[  485.295492]  xenbus_register_driver_common+0x2e/0x40
+[  485.295506]  __xenbus_register_frontend+0x2d/0x50
+[  485.295526]  xlblk_init+0x119/0x138
+[  485.295540]  ? loop_init+0x1e7/0x1e7
+[  485.295554]  do_one_initcall+0x4a/0x200
+[  485.295571]  kernel_init_freeable+0x2cd/0x379
+[  485.295589]  ? rest_init+0xe0/0xe0
+[  485.295602]  kernel_init+0xf/0x120
+[  485.295615]  ? rest_init+0xe0/0xe0
+[  485.295628]  ret_from_fork+0x35/0x40
+[  485.295648] INFO: task xenwatch:19 blocked for more than 362 seconds.
+[  485.295718]       Not tainted 5.4.151custom_anish+ #58
+[  485.295731] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  485.295749] xenwatch        D    0    19      2 0x80004000
+[  485.295764] Call Trace:
+[  485.295777]  __schedule+0x2cb/0x880
+[  485.295790]  schedule+0x42/0xb0
+[  485.295804]  xs_talkv+0x254/0x3a0
+[  485.295817]  ? wait_woken+0x150/0x150
+[  485.295832]  xs_single+0x55/0x80
+[  485.295846]  xenbus_read+0x52/0xa0
+[  485.295861]  xenbus_scanf+0x57/0xdb
+[  485.295875]  ? simple_strntoull+0x87/0xa0
+[  485.295890]  xenbus_read_unsigned+0x37/0x5a
+[  485.295904]  talk_to_blkback+0xad/0x1110
+[  485.295918]  ? xenbus_gather+0x1b9/0x200
+[  485.295933]  ? kfree+0xb8/0x280
+[  485.295945]  blkback_changed+0x46f/0xe60
+[  485.295959]  xenbus_otherend_changed+0x8f/0x130
+[  485.295973]  backend_changed+0x13/0x20
+[  485.295987]  xenwatch_thread+0xa6/0x180
+[  485.296053]  ? wait_woken+0x150/0x150
+[  485.296067]  kthread+0x120/0x140
+[  485.296081]  ? count_strings+0x50/0x50
+[  485.296094]  ? kthread_associate_blkcg+0xa0/0xa0
+[  485.296110]  ret_from_fork+0x35/0x40
+[  606.126796] INFO: task swapper/0:1 blocked for more than 483 seconds.
+[  606.126827]       Not tainted 5.4.151custom_anish+ #58
+[  606.126831] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  606.126836] swapper/0       D    0     1      0 0x80004000
+[  606.126842] Call Trace:
+[  606.126850]  __schedule+0x2cb/0x880
+[  606.126855]  schedule+0x42/0xb0
+[  606.126861]  xs_talkv+0x254/0x3a0
+[  606.126866]  ? wait_woken+0x150/0x150
+[  606.126870]  xs_single+0x55/0x80
+[  606.126874]  xenbus_gather+0xf7/0x200
+[  606.126877]  ? _cond_resched+0x1a/0x50
+[  606.126881]  xenbus_read_otherend_details+0x38/0xd0
+[  606.126885]  read_backend_details+0x1c/0x20
+[  606.126889]  talk_to_otherend+0x5b/0x60
+[  606.126892]  xenbus_dev_probe+0x69/0x150
+[  606.126896]  xenbus_frontend_dev_probe+0x48/0x50
+[  606.126901]  really_probe+0x189/0x490
+[  606.126905]  driver_probe_device+0xd0/0x120
+[  606.126909]  device_driver_attach+0xcc/0xe0
+[  606.126913]  __driver_attach+0x8f/0x150
+[  606.126917]  ? device_driver_attach+0xe0/0xe0
+[  606.126921]  bus_for_each_dev+0x70/0xc0
+[  606.126925]  driver_attach+0x1e/0x20
+[  606.126929]  bus_add_driver+0x135/0x230
+[  606.126933]  driver_register+0x91/0x140
+[  606.126936]  xenbus_register_driver_common+0x2e/0x40
+[  606.126941]  __xenbus_register_frontend+0x2d/0x50
+[  606.126947]  xlblk_init+0x119/0x138
+[  606.126952]  ? loop_init+0x1e7/0x1e7
+[  606.126957]  do_one_initcall+0x4a/0x200
+[  606.126962]  kernel_init_freeable+0x2cd/0x379
+[  606.126985]  ? rest_init+0xe0/0xe0
+[  606.126989]  kernel_init+0xf/0x120
+[  606.126993]  ? rest_init+0xe0/0xe0
+[  606.127012]  ret_from_fork+0x35/0x40
+[  606.127019] INFO: task xenwatch:19 blocked for more than 483 seconds.
+[  606.127024]       Not tainted 5.4.151custom_anish+ #58
+[  606.127027] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  606.127047] xenwatch        D    0    19      2 0x80004000
+[  606.127052] Call Trace:
+[  606.127057]  __schedule+0x2cb/0x880
+[  606.127061]  schedule+0x42/0xb0
+[  606.127065]  xs_talkv+0x254/0x3a0
+[  606.127069]  ? wait_woken+0x150/0x150
+[  606.127073]  xs_single+0x55/0x80
+[  606.127077]  xenbus_read+0x52/0xa0
+[  606.127083]  xenbus_scanf+0x57/0xdb
+[  606.127087]  ? simple_strntoull+0x87/0xa0
+[  606.127092]  xenbus_read_unsigned+0x37/0x5a
+[  606.127096]  talk_to_blkback+0xad/0x1110
+[  606.127101]  ? xenbus_gather+0x1b9/0x200
+[  606.127106]  ? kfree+0xb8/0x280
+[  606.127110]  blkback_changed+0x46f/0xe60
+[  606.127114]  xenbus_otherend_changed+0x8f/0x130
+[  606.127118]  backend_changed+0x13/0x20
+[  606.127122]  xenwatch_thread+0xa6/0x180
+[  606.127126]  ? wait_woken+0x150/0x150
+[  606.127130]  kthread+0x120/0x140
+[  606.127134]  ? count_strings+0x50/0x50
+[  606.127138]  ? kthread_associate_blkcg+0xa0/0xa0
+[  606.127142]  ret_from_fork+0x35/0x40
+[  726.959039] INFO: task swapper/0:1 blocked for more than 604 seconds.
+[  726.959149]       Not tainted 5.4.151custom_anish+ #58
+[  726.959163] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  726.959249] swapper/0       D    0     1      0 0x80004000
+[  726.959271] Call Trace:
+[  726.959294]  __schedule+0x2cb/0x880
+[  726.959308]  schedule+0x42/0xb0
+[  726.959325]  xs_talkv+0x254/0x3a0
+[  726.959340]  ? wait_woken+0x150/0x150
+[  726.959416]  xs_single+0x55/0x80
+[  726.959431]  xenbus_gather+0xf7/0x200
+[  726.959445]  ? _cond_resched+0x1a/0x50
+[  726.959458]  xenbus_read_otherend_details+0x38/0xd0
+[  726.959473]  read_backend_details+0x1c/0x20
+[  726.959484]  talk_to_otherend+0x5b/0x60
+[  726.959496]  xenbus_dev_probe+0x69/0x150
+[  726.959509]  xenbus_frontend_dev_probe+0x48/0x50
+[  726.959526]  really_probe+0x189/0x490
+[  726.959540]  driver_probe_device+0xd0/0x120
+[  726.959554]  device_driver_attach+0xcc/0xe0
+[  726.959567]  __driver_attach+0x8f/0x150
+[  726.959581]  ? device_driver_attach+0xe0/0xe0
+[  726.959596]  bus_for_each_dev+0x70/0xc0
+[  726.959609]  driver_attach+0x1e/0x20
+[  726.959622]  bus_add_driver+0x135/0x230
+[  726.959635]  driver_register+0x91/0x140
+[  726.959648]  xenbus_register_driver_common+0x2e/0x40
+[  726.959663]  __xenbus_register_frontend+0x2d/0x50
+[  726.959739]  xlblk_init+0x119/0x138
+[  726.959755]  ? loop_init+0x1e7/0x1e7
+[  726.959770]  do_one_initcall+0x4a/0x200
+[  726.959788]  kernel_init_freeable+0x2cd/0x379
+[  726.959806]  ? rest_init+0xe0/0xe0
+[  726.959819]  kernel_init+0xf/0x120
+[  726.959832]  ? rest_init+0xe0/0xe0
+[  726.959845]  ret_from_fork+0x35/0x40
+[  726.959865] INFO: task xenwatch:19 blocked for more than 604 seconds.
+[  726.959881]       Not tainted 5.4.151custom_anish+ #58
+[  726.959893] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  726.959910] xenwatch        D    0    19      2 0x80004000
+[  726.959925] Call Trace:
+[  726.959936]  __schedule+0x2cb/0x880
+[  726.959949]  schedule+0x42/0xb0
+[  726.959964]  xs_talkv+0x254/0x3a0
+[  726.959976]  ? wait_woken+0x150/0x150
+[  726.959990]  xs_single+0x55/0x80
+[  726.960004]  xenbus_read+0x52/0xa0
+[  726.960076]  xenbus_scanf+0x57/0xdb
+[  726.960091]  ? simple_strntoull+0x87/0xa0
+[  726.960105]  xenbus_read_unsigned+0x37/0x5a
+[  726.960119]  talk_to_blkback+0xad/0x1110
+[  726.960134]  ? xenbus_gather+0x1b9/0x200
+[  726.960149]  ? kfree+0xb8/0x280
+[  726.960161]  blkback_changed+0x46f/0xe60
+[  726.960175]  xenbus_otherend_changed+0x8f/0x130
+[  726.960190]  backend_changed+0x13/0x20
+[  726.960204]  xenwatch_thread+0xa6/0x180
+[  726.960216]  ? wait_woken+0x150/0x150
+[  726.960229]  kthread+0x120/0x140
+[  726.960243]  ? count_strings+0x50/0x50
+[  726.960255]  ? kthread_associate_blkcg+0xa0/0xa0
+[  726.960270]  ret_from_fork+0x35/0x40
+[ 1724.123503] hrtimer: interrupt took 13132011 ns

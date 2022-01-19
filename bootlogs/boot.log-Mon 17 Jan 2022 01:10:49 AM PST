@@ -1,0 +1,574 @@
+Parsing config from /etc/xen/xenguest.cfg
+[    0.000000] Linux version 5.4.151custom_anish+ (root@pop-os) (gcc version 11.2.0 (Ubuntu 11.2.0-7ubuntu2)) #33 SMP Mon Jan 17 04:08:17 EST 2022 ()
+[    0.000000] Command line: root=/dev/xvda2 ro elevator=noop
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] Disabled fast string operations
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] ACPI in unprivileged domain disabled
+[    0.000000] Released 0 page(s)
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] Xen: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] Xen: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] Xen: [mem 0x0000000000100000-0x000000013b7fffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] DMI not present or invalid.
+[    0.000000] Hypervisor detected: Xen PV
+[    0.118430] tsc: Fast TSC calibration failed
+[    0.118433] tsc: Detected 2591.978 MHz processor
+[    0.118452] last_pfn = 0x13b800 max_arch_pfn = 0x400000000
+[    0.118453] Disabled
+[    0.118454] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.118460] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WC  WP  UC  UC  
+[    0.118461] last_pfn = 0x100000 max_arch_pfn = 0x400000000
+[    0.205512] check: Scanning 1 areas for low memory corruption
+[    0.205521] Kernel/User page tables isolation: disabled on XEN PV.
+[    0.835792] RAMDISK: [mem 0x04000000-0x07b7ffff]
+[    0.835852] NUMA turned off
+[    0.835853] Faking a node at [mem 0x0000000000000000-0x000000013b7fffff]
+[    0.835861] NODE_DATA(0) allocated [mem 0x13ae22000-0x13ae4bfff]
+[    0.847476] Zone ranges:
+[    0.847478]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.847479]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.847480]   Normal   [mem 0x0000000100000000-0x000000013b7fffff]
+[    0.847481]   Device   empty
+[    0.847482] Movable zone start for each node
+[    0.847484] Early memory node ranges
+[    0.847485]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.847485]   node   0: [mem 0x0000000000100000-0x000000013b7fffff]
+[    0.847594] Zeroed struct page in unavailable ranges: 18529 pages
+[    0.847594] Initmem setup node 0 [mem 0x0000000000001000-0x000000013b7fffff]
+[    0.861251] p2m virtual area at (____ptrval____), size is 40000000
+[    0.944025] Remapped 0 page(s)
+[    0.944113] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.944120] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.944121] PM: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[    0.944123] Cannot find an available gap in the 32-bit address range
+[    0.944123] PCI devices with unassigned 32-bit BARs may not work!
+[    0.944124] [mem 0x13b900000-0x13bcfffff] available for PCI devices
+[    0.944126] Booting paravirtualized kernel on Xen
+[    0.944127] Xen version: 4.11.4-pre (preserve-AD)
+[    0.944130] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.944134] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+[    0.944241] percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u2097152
+[    0.944280] Built 1 zonelists, mobility grouping on.  Total pages: 1271978
+[    0.944281] Policy zone: Normal
+[    0.944282] Kernel command line: root=/dev/xvda2 ro elevator=noop
+[    0.944651] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    0.944816] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.944962] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.955840] Memory: 4951692K/5168764K available (16387K kernel code, 3654K rwdata, 9320K rodata, 2764K init, 5728K bss, 217072K reserved, 0K cma-reserved)
+[    0.955848] random: get_random_u64 called from __kmem_cache_create+0x42/0x6f0 with crng_init=0
+[    0.956076] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.956417] ftrace: allocating 43027 entries in 169 pages
+[    0.969297] rcu: Hierarchical RCU implementation.
+[    0.969299] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=1.
+[    0.969300] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.969301] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.973215] Using NULL legacy PIC
+[    0.973217] NR_IRQS: 524544, nr_irqs: 32, preallocated irqs: 0
+[    0.973263] xen:events: Using FIFO-based ABI
+[    0.973311] random: crng done (trusting CPU's manufacturer)
+[    0.973342] Console: colour dummy device 80x25
+[    0.973397] printk: console [tty0] enabled
+[    0.973634] printk: console [hvc0] enabled
+[    0.973662] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.973730] installing Xen timer for CPU 0
+[    0.973938] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255ca2026c5, max_idle_ns: 440795210398 ns
+[    0.973954] Calibrating delay loop (skipped), value calculated using timer frequency.. 5183.95 BogoMIPS (lpj=10367912)
+[    0.973961] pid_max: default: 32768 minimum: 301
+[    0.974035] LSM: Security Framework initializing
+[    0.974057] Yama: becoming mindful.
+[    0.974116] AppArmor: AppArmor initialized
+[    0.974230] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.974245] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.974286] *** VALIDATE tmpfs ***
+[    0.974521] *** VALIDATE proc ***
+[    0.974668] *** VALIDATE cgroup1 ***
+[    0.974686] *** VALIDATE cgroup2 ***
+[    0.974803] Disabled fast string operations
+[    0.974868] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.974884] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.974893] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.974898] Spectre V2 : Mitigation: Full generic retpoline
+[    0.974901] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.974905] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    0.974909] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.974913] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+[    0.974918] MDS: Mitigation: Clear CPU buffers
+[    1.018794] Freeing SMP alternatives memory: 40K
+[    1.020116] VPMU disabled by hypervisor.
+[    1.020300] Performance Events: unsupported p6 CPU model 165 no PMU driver, software events only.
+[    1.020363] rcu: Hierarchical SRCU implementation.
+[    1.020726] NMI watchdog: Perf NMI watchdog permanently disabled
+[    1.020765] smp: Bringing up secondary CPUs ...
+[    1.020769] smp: Brought up 1 node, 1 CPU
+[    1.020772] smpboot: Max logical packages: 1
+[    1.021069] devtmpfs: initialized
+[    1.021104] x86/mm: Memory block size: 128MB
+[    1.021441] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    1.021450] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.021486] pinctrl core: initialized pinctrl subsystem
+[    1.021630] NET: Registered protocol family 16
+[    1.021646] xen:grant_table: Grant tables using version 1 layout
+[    1.021658] Grant table initialized
+[    1.021682] audit: initializing netlink subsys (disabled)
+[    1.021765] audit: type=2000 audit(1642410656.673:1): state=initialized audit_enabled=0 res=1
+[    1.021845] EISA bus registered
+[    1.021973] grepstub : Reading dir : cpu/0, node : availability, fmt : %15s
+[    1.021996] grepstub : Result from xenbus_read, online
+[    1.023252] PCI: setting up Xen PCI frontend stub
+[    1.025445] fbcon: Taking over console
+[    1.025472] ACPI: Interpreter disabled.
+[    1.025484] xen:balloon: Initialising balloon driver
+[    1.025555] grepstub : Reading dir : memory, node : target, fmt : %llu
+[    1.025996] grepstub : Result from xenbus_read, 5169152
+[    1.025996] grepstub : Reading dir : memory, node : static-max, fmt : %llu
+[    1.026010] Finally writing 1
+[    1.026010] grepstub : Result from xenbus_read, 5169152
+[    1.026010] grepstub : Writing transaction : 0 ,dir : control, node : feature-poweroff, buf : 1
+[    1.026010] Finally writing 1
+[    1.026034] grepstub : Writing transaction : 0 ,dir : control, node : feature-reboot, buf : 1
+[    1.026034] Finally writing 1
+[    1.026034] grepstub : Writing transaction : 0 ,dir : control, node : feature-suspend, buf : 1
+[    1.026034] grepstub : Reading dir : control, node : sysrq, fmt : %c
+[    1.026034] grepstub : Result from xenbus_read, (efault)
+[    1.026034] iommu: Default domain type: Translated 
+[    1.026134] SCSI subsystem initialized
+[    1.026188] vgaarb: loaded
+[    1.026214] usbcore: registered new interface driver usbfs
+[    1.026221] usbcore: registered new interface driver hub
+[    1.026227] usbcore: registered new device driver usb
+[    1.026247] pps_core: LinuxPPS API ver. 1 registered
+[    1.026250] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.026256] PTP clock support registered
+[    1.026292] EDAC MC: Ver: 3.0.0
+[    1.026368] PCI: System does not support PCI
+[    1.026434] NetLabel: Initializing
+[    1.026438] NetLabel:  domain hash size = 128
+[    1.026440] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.026453] NetLabel:  unlabeled traffic allowed by default
+[    1.027142] clocksource: Switched to clocksource xen
+[    1.034197] *** VALIDATE bpf ***
+[    1.034239] VFS: Disk quotas dquot_6.6.0
+[    1.034252] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.034271] *** VALIDATE ramfs ***
+[    1.034275] hugetlbfs: disabling because there are no supported hugepage sizes
+[    1.034329] AppArmor: AppArmor Filesystem Enabled
+[    1.034343] pnp: PnP ACPI: disabled
+[    1.035308] thermal_sys: Registered thermal governor 'fair_share'
+[    1.035308] thermal_sys: Registered thermal governor 'bang_bang'
+[    1.035314] thermal_sys: Registered thermal governor 'step_wise'
+[    1.035317] thermal_sys: Registered thermal governor 'user_space'
+[    1.035321] thermal_sys: Registered thermal governor 'power_allocator'
+[    1.035368] NET: Registered protocol family 2
+[    1.035467] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.036230] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    1.164405] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    1.164547] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+[    1.164605] TCP: Hash tables configured (established 65536 bind 65536)
+[    1.164651] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.164673] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    1.164814] NET: Registered protocol family 1
+[    1.164824] NET: Registered protocol family 44
+[    1.164830] PCI: CLS 0 bytes, default 64
+[    1.164868] Trying to unpack rootfs image as initramfs...
+[    1.291407] Freeing initrd memory: 60928K
+[    1.291548] check: Scanning for low memory corruption every 60 seconds
+[    1.291808] Initialise system trusted keyrings
+[    1.291836] Key type blacklist registered
+[    1.291884] workingset: timestamp_bits=36 max_order=21 bucket_order=0
+[    1.292673] zbud: loaded
+[    1.292938] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.293052] fuse: init (API version 7.31)
+[    1.293066] *** VALIDATE fuse ***
+[    1.293069] *** VALIDATE fuse ***
+[    1.293137] Platform Keyring initialized
+[    1.295557] Key type asymmetric registered
+[    1.295580] Asymmetric key parser 'x509' registered
+[    1.295592] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    1.295636] io scheduler mq-deadline registered
+[    1.295702] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.295987] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    1.296981] Linux agpgart interface v0.103
+[    1.394158] loop: module loaded
+[    1.394184] Invalid max_queues (4), will use default max: 1.
+[    1.394833] grepstub : Reading dir : device/vbd/51714, node : virtual-device, fmt : %i
+[    1.394993] grepstub : Result from xenbus_read, 51714
+[    1.395513] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : max-ring-page-order, fmt : %u
+[    1.395758] grepstub : Result from xenbus_read, 4
+[    1.395778] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : multi-queue-max-queues, fmt : %u
+[    1.396039] grepstub : Result from xenbus_read, 2
+[    1.396118] grepstub : Reading dir : device/vbd/51713, node : virtual-device, fmt : %i
+[    1.396558] Finally writing 8
+[    1.396595] grepstub : Result from xenbus_read, 51713
+[    1.396725] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : ring-ref, buf : 8
+[    1.396732] Finally writing 9
+[    1.396873] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : event-channel, buf : 9
+[    1.396878] Finally writing x86_64-abi
+[    1.397033] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : protocol, buf : x86_64-abi
+[    1.397049] Finally writing 1
+[    1.397119] libphy: Fixed MDIO Bus: probed
+[    1.397153] tun: Universal TUN/TAP device driver, 1.6
+[    1.397217] grepstub : Writing transaction : 3 ,dir : device/vbd/51714, node : feature-persistent, buf : 1
+[    1.397239] PPP generic driver version 2.4.2
+[    1.397269] xen_netfront: Initialising Xen virtual ethernet driver
+[    1.397827] grepstub : Reading dir : device/vbd/51714, node : state, fmt : %d
+[    1.397981] grepstub : Result from xenbus_read, 1
+[    1.397999] Finally writing 3
+[    1.398184] grepstub : Writing transaction : 4 ,dir : device/vbd/51714, node : state, buf : 3
+[    1.398866] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : max-ring-page-order, fmt : %u
+[    1.399159] VFIO - User Level meta-driver version: 0.3
+[    1.399227] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.399233] ehci-pci: EHCI PCI platform driver
+[    1.399240] ehci-platform: EHCI generic platform driver
+[    1.399248] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.399253] ohci-pci: OHCI PCI platform driver
+[    1.399259] ohci-platform: OHCI generic platform driver
+[    1.399266] uhci_hcd: USB Universal Host Controller Interface driver
+[    1.399294] i8042: PNP: No PS/2 controller found.
+[    1.399297] i8042: Probing ports directly.
+[    1.400147] i8042: No controller found
+[    1.400172] grepstub : Result from xenbus_read, 4
+[    1.400173] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : multi-queue-max-queues, fmt : %u
+[    1.400232] mousedev: PS/2 mouse device common for all mice
+[    1.400296] i2c /dev entries driver
+[    1.400342] device-mapper: uevent: version 1.0.3
+[    1.400401] device-mapper: ioctl: 4.41.0-ioctl (2019-09-16) initialised: dm-devel@redhat.com
+[    1.400445] platform eisa.0: Probing EISA bus 0
+[    1.400475] platform eisa.0: EISA: Detected 0 cards
+[    1.400480] intel_pstate: CPU model not supported
+[    1.400493] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.400569] grepstub : Result from xenbus_read, 2
+[    1.400658] drop_monitor: Initializing network drop monitor service
+[    1.400699] Finally writing 9
+[    1.400867] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : ring-ref, buf : 9
+[    1.400872] Finally writing 10
+[    1.400914] NET: Registered protocol family 10
+[    1.401031] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : event-channel, buf : 10
+[    1.401033] Finally writing x86_64-abi
+[    1.401252] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : protocol, buf : x86_64-abi
+[    1.401257] Finally writing 1
+[    1.401450] grepstub : Writing transaction : 5 ,dir : device/vbd/51713, node : feature-persistent, buf : 1
+[    1.402033] grepstub : Reading dir : device/vbd/51713, node : state, fmt : %d
+[    1.402181] grepstub : Result from xenbus_read, 1
+[    1.402187] Finally writing 3
+[    1.402551] grepstub : Writing transaction : 6 ,dir : device/vbd/51713, node : state, buf : 3
+[    1.404143] grepstub : Reading dir : /local/domain/0/backend/vif/7/0, node : feature-rx-copy, fmt : %u
+[    1.404373] grepstub : Result from xenbus_read, 1
+[    1.404380] grepstub : Reading dir : /local/domain/0/backend/vif/7/0, node : multi-queue-max-queues, fmt : %u
+[    1.404701] grepstub : Result from xenbus_read, 2
+[    1.404709] grepstub : Reading dir : /local/domain/0/backend/vif/7/0, node : feature-split-event-channels, fmt : %u
+[    1.405030] grepstub : Result from xenbus_read, 1
+[    1.406661] Finally writing 1
+[    1.406819] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : multi-queue-num-queues, buf : 1
+[    1.406825] Finally writing 768
+[    1.407020] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : tx-ring-ref, buf : 768
+[    1.407026] Finally writing 769
+[    1.407200] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : rx-ring-ref, buf : 769
+[    1.407206] Finally writing 11
+[    1.595550] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : event-channel-tx, buf : 11
+[    1.595558] Finally writing 12
+[    1.595776] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : event-channel-rx, buf : 12
+[    1.595783] Finally writing 1
+[    1.596176] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : request-rx-copy, buf : 1
+[    1.596181] Finally writing 1
+[    1.596577] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : feature-rx-notify, buf : 1
+[    1.596583] Finally writing 1
+[    1.596942] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : feature-sg, buf : 1
+[    1.596948] Finally writing 1
+[    1.597323] grepstub : Writing transaction : 7 ,dir : device/vif/0, node : feature-gso-tcpv4, buf : 1
+[    1.597984] Finally writing 1
+[    1.598232] vif vif-0: 5 writing feature-gso-tcpv6
+[    1.598240] Finally writing 5 writing feature-gso-tcpv6
+[    1.598971] grepstub : Reading dir : device/vif/0, node : state, fmt : %d
+[    1.599177] grepstub : Result from xenbus_read, 1
+[    1.599184] Finally writing 5
+[    1.599557] grepstub : Writing transaction : 9 ,dir : device/vif/0, node : state, buf : 5
+[    1.601126] Segment Routing with IPv6
+[    1.601171] NET: Registered protocol family 17
+[    1.601225] Key type dns_resolver registered
+[    1.601313] RAS: Correctable Errors collector initialized.
+[    1.601321] IPI shorthand broadcast: enabled
+[    1.601330] sched_clock: Marking stable (1597288436, 670973)->(1607747740, -9788331)
+[    1.601513] registered taskstats version 1
+[    1.601527] Loading compiled-in X.509 certificates
+[    1.602064] Loaded X.509 cert 'Build time autogenerated kernel key: 44338da996bb5bbcd96aaf33d33630dd991c7e76'
+[    1.602099] zswap: loaded using pool lzo/zbud
+[    1.602232] Key type ._fscrypt registered
+[    1.602249] Key type .fscrypt registered
+[    1.602508] grepstub : Reading dir : device/vif/0, node : state, fmt : %d
+[    1.602566] grepstub : Result from xenbus_read, 5
+[    1.602573] Finally writing 6
+[    1.603033] grepstub : Writing transaction : 10 ,dir : device/vif/0, node : state, buf : 6
+[    1.607560] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : physical-sector-size, fmt : %u
+[    1.607815] Key type encrypted registered
+[    1.607827] AppArmor: AppArmor sha1 policy hashing enabled
+[    1.607834] ima: No TPM chip found, activating TPM-bypass!
+[    1.607840] ima: Allocated hash algorithm: sha1
+[    1.607847] ima: No architecture policies found
+[    1.607855] evm: Initialising EVM extended attributes:
+[    1.607858] evm: security.selinux
+[    1.607860] evm: security.SMACK64
+[    1.607866] evm: security.SMACK64EXEC
+[    1.607882] evm: security.SMACK64TRANSMUTE
+[    1.607884] evm: security.SMACK64MMAP
+[    1.607886] evm: security.apparmor
+[    1.607889] evm: security.ima
+[    1.607891] evm: security.capability
+[    1.607893] evm: HMAC attrs: 0x1
+[    1.608069] grepstub : Result from xenbus_read, 512
+[    1.608070] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : feature-barrier, fmt : %u
+[    1.608377] grepstub : Result from xenbus_read, 1
+[    1.608400] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : feature-flush-cache, fmt : %u
+[    1.608702] grepstub : Result from xenbus_read, 1
+[    1.608722] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : feature-discard, fmt : %u
+[    1.608916] grepstub : Result from xenbus_read, 1
+[    1.608924] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : discard-granularity, fmt : %u
+[    1.609351] grepstub : Result from xenbus_read, 4096
+[    1.609359] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : discard-alignment, fmt : %u
+[    1.609506] grepstub : Result from xenbus_read, 0
+[    1.609514] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : discard-secure, fmt : %u
+[    1.609651] grepstub : Result from xenbus_read, 0
+[    1.609659] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : feature-persistent, fmt : %u
+[    1.609782] grepstub : Result from xenbus_read, 1
+[    1.609789] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51714, node : feature-max-indirect-segments, fmt : %u
+[    1.609912] grepstub : Result from xenbus_read, 256
+[    1.610369] blkfront: xvda2: flush diskcache: enabled; persistent grants: enabled; indirect descriptors: enabled;
+[    1.610521] grepstub : Reading dir : device/vbd/51714, node : state, fmt : %d
+[    1.610647] grepstub : Result from xenbus_read, 3
+[    1.610654] Finally writing 4
+[    1.610813] grepstub : Writing transaction : 11 ,dir : device/vbd/51714, node : state, buf : 4
+[    1.625204] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : physical-sector-size, fmt : %u
+[    1.625454] grepstub : Result from xenbus_read, 512
+[    1.625468] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : feature-barrier, fmt : %u
+[    1.625687] grepstub : Result from xenbus_read, 1
+[    1.625699] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : feature-flush-cache, fmt : %u
+[    1.625904] grepstub : Result from xenbus_read, 1
+[    1.625916] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : feature-discard, fmt : %u
+[    1.626412] grepstub : Result from xenbus_read, 1
+[    1.626427] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : discard-granularity, fmt : %u
+[    1.626680] grepstub : Result from xenbus_read, 4096
+[    1.626694] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : discard-alignment, fmt : %u
+[    1.795573] grepstub : Result from xenbus_read, 0
+[    1.795596] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : discard-secure, fmt : %u
+[    1.795876] grepstub : Result from xenbus_read, 0
+[    1.795885] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : feature-persistent, fmt : %u
+[    1.796072] grepstub : Result from xenbus_read, 1
+[    1.796080] grepstub : Reading dir : /local/domain/0/backend/vbd/7/51713, node : feature-max-indirect-segments, fmt : %u
+[    1.796413] grepstub : Result from xenbus_read, 256
+[    1.796875] blkfront: xvda1: flush diskcache: enabled; persistent grants: enabled; indirect descriptors: enabled;
+[    1.797068] grepstub : Reading dir : device/vbd/51713, node : state, fmt : %d
+[    1.797225] grepstub : Result from xenbus_read, 3
+[    1.797235] Finally writing 4
+[    1.797465] grepstub : Writing transaction : 12 ,dir : device/vbd/51713, node : state, buf : 4
+[    1.898088] hctosys: unable to open rtc device (rtc0)
+[    1.899607] Freeing unused decrypted memory: 2040K
+[    1.900402] Freeing unused kernel image memory: 2764K
+[    1.900426] Write protecting the kernel read-only data: 28672k
+[    1.908964] Freeing unused kernel image memory: 2008K
+[    1.909285] Freeing unused kernel image memory: 920K
+[    1.946741] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.946754] Run /init as init process
+Loading, please wait...
+Starting version 245.4-4ubuntu3.13
+Begin: Loading essential drivers ... done.
+Begin: Running /scripts/init-premount ... done.
+Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
+Begin: Running /scripts/local-premount ... done.
+Begin: Will now check root file system ... fsck from util-linux 2.34
+[/usr/sbin/fsck.ext4 (1) -- /dev/xvda2] fsck.ext4 -a -C0 /dev/xvda2 
+/dev/xvda2: recovering journal
+/dev/xvda2: clean, 18322/262144 files, 254712/1048576 blocks
+done.
+[    2.270171] EXT4-fs (xvda2): mounted filesystem with ordered data mode. Opts: (null)
+done.
+Begin: Running /scripts/local-bottom ... done.
+Begin: Running /scripts/init-bottom ... done.
+[    2.318056] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x255ca2026c5, max_idle_ns: 440795210398 ns
+[    2.396846] systemd[1]: Failed to look up module alias 'autofs4': Function not implemented
+[    2.397514] cgroup2: Unknown parameter 'memory_recursiveprot'
+[    2.399891] systemd[1]: systemd 247.3-6 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +ZSTD +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=unified)
+[    2.400002] systemd[1]: Detected virtualization xen.
+[    2.400013] systemd[1]: Detected architecture x86-64.
+
+Welcome to [1mDebian GNU/Linux 11 (bullseye)[0m!
+
+[    2.401027] systemd[1]: Set hostname to <xenguest>.
+[    2.543841] systemd[1]: Queued start job for default target Graphical Interface.
+[    2.545380] systemd[1]: Created slice system-getty.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-getty.slice[0m.
+[    2.545806] systemd[1]: Created slice system-modprobe.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-modprobe.slice[0m.
+[    2.546173] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Created slice [0;1;39msystem-serial\x2dgetty.slice[0m.
+[    2.546407] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+[    2.546631] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Started [0;1;39mForward Password R…uests to Wall Directory Watch[0m.
+[    2.546795] systemd[1]: Starting of Arbitrary Executable File Formats File System Automount Point not supported.
+[[0;1;38;5;185mUNSUPP[0m] Starting of [0;1;39mArbitrary Exec…Automount Point[0m not supported.
+[    2.546909] systemd[1]: Reached target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal Encrypted Volumes[0m.
+[    2.547028] systemd[1]: Reached target Paths.
+[[0;32m  OK  [0m] Reached target [0;1;39mPaths[0m.
+[    2.547106] systemd[1]: Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems[0m.
+[    2.547182] systemd[1]: Reached target Slices.
+[[0;32m  OK  [0m] Reached target [0;1;39mSlices[0m.
+[    2.547419] systemd[1]: Listening on Syslog Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mSyslog Socket[0m.
+[    2.547614] systemd[1]: Listening on fsck to fsckd communication Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mfsck to fsckd communication Socket[0m.
+[    2.547765] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on [0;1;39minitctl Compatibility Named Pipe[0m.
+[    2.548048] systemd[1]: Listening on Journal Audit Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Audit Socket[0m.
+[    2.548250] systemd[1]: Listening on Journal Socket (/dev/log).
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket (/dev/log)[0m.
+[    2.548474] systemd[1]: Listening on Journal Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket[0m.
+[    2.549145] systemd[1]: Listening on udev Control Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Control Socket[0m.
+[    2.549359] systemd[1]: Listening on udev Kernel Socket.
+[[0;32m  OK  [0m] Listening on [0;1;39mudev Kernel Socket[0m.
+[    2.549441] systemd[1]: Reached target Sockets.
+[[0;32m  OK  [0m] Reached target [0;1;39mSockets[0m.
+[    2.549662] systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+[    2.551036] systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting [0;1;39mPOSIX Message Queue File System[0m...
+[    2.552425] systemd[1]: Mounting Kernel Debug File System...
+         Mounting [0;1;39mKernel Debug File System[0m...
+[    2.553717] systemd[1]: Mounting Kernel Trace File System...
+         Mounting [0;1;39mKernel Trace File System[0m...
+[    2.607100] systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+[    2.608326] systemd[1]: Starting Load Kernel Module configfs...
+         Starting [0;1;39mLoad Kernel Module configfs[0m...
+[    2.609737] systemd[1]: Starting Load Kernel Module fuse...
+         Starting [0;1;39mLoad Kernel Module fuse[0m...
+[    2.610564] systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+[    2.610660] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    2.620815] systemd[1]: Starting Journal Service...
+         Starting [0;1;39mJournal Service[0m...
+[    2.638754] systemd[1]: Starting Load Kernel Modules...
+         Starting [0;1;39mLoad Kernel Modules[0m...
+[    2.642215] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting [0;1;39mRemount Root and Kernel File Systems[0m...
+[    2.652398] systemd[1]: Starting Coldplug All udev Devices...
+         Starting [0;1;39mColdplug All udev Devices[0m...
+[    2.657864] systemd[1]: Mounted POSIX Message Queue File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mPOSIX Message Queue File System[0m.
+[    2.658139] systemd[1]: Mounted Kernel Debug File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Debug File System[0m.
+[    2.658375] systemd[1]: Mounted Kernel Trace File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Trace File System[0m.
+[    2.658763] systemd[1]: modprobe@configfs.service: Succeeded.
+[    2.659028] systemd[1]: Finished Load Kernel Module configfs.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module configfs[0m.
+[    2.659528] systemd[1]: modprobe@fuse.service: Succeeded.
+[    2.659768] systemd[1]: Finished Load Kernel Module fuse.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module fuse[0m.
+[    2.661214] systemd[1]: Mounting FUSE Control File System...
+         Mounting [0;1;39mFUSE Control File System[0m...
+[    2.662636] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting [0;1;39mKernel Configuration File System[0m...
+[    2.669932] systemd[1]: Finished Load Kernel Modules.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Modules[0m.
+[    2.685598] systemd[1]: Starting Apply Kernel Variables...
+         Starting [0;1;39mApply Kernel Variables[0m...
+[    2.704572] systemd[1]: Mounted FUSE Control File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mFUSE Control File System[0m.
+[    2.714167] systemd[1]: Mounted Kernel Configuration File System.
+[[0;32m  OK  [0m] Mounted [0;1;39mKernel Configuration File System[0m.
+[    2.727637] systemd[1]: Finished Apply Kernel Variables.
+[[0;32m  OK  [0m] Finished [0;1;39mApply Kernel Variables[0m.
+[    2.758307] EXT4-fs (xvda2): re-mounted. Opts: errors=remount-ro
+[    2.760171] systemd[1]: Finished Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Finished [0;1;39mRemount Root and Kernel File Systems[0m.
+[    2.760901] systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+[    2.832340] systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+[    2.833513] systemd[1]: Starting Load/Save Random Seed...
+         Starting [0;1;39mLoad/Save Random Seed[0m...
+[    2.835092] systemd[1]: Starting Create System Users...
+         Starting [0;1;39mCreate System Users[0m...
+[    2.835643] systemd[1]: Started Journal Service.
+[[0;32m  OK  [0m] Started [0;1;39mJournal Service[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mColdplug All udev Devices[0m.
+         Starting [0;1;39mHelper to synchronize boot up for ifupdown[0m...
+         Starting [0;1;39mFlush Journal to Persistent Storage[0m...
+[    2.872989] systemd-journald[204]: Received client request to flush runtime journal.
+[[0;32m  OK  [0m] Finished [0;1;39mLoad/Save Random Seed[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate System Users[0m.
+         Starting [0;1;39mCreate Static Device Nodes in /dev[0m...
+[    2.891943] systemd-journald[204]: File /var/log/journal/d4355e321ab14d089722216f21583a12/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Static Device Nodes in /dev[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems (Pre)[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems[0m.
+         Starting [0;1;39mRule-based Manage…for Device Events and Files[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mFlush Journal to Persistent Storage[0m.
+         Starting [0;1;39mCreate Volatile Files and Directories[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mCreate Volatile Files and Directories[0m.
+         Starting [0;1;39mNetwork Time Synchronization[0m...
+         Starting [0;1;39mUpdate UTMP about System Boot/Shutdown[0m...
+[    2.983129] proc: Bad value for 'hidepid'
+[[0;32m  OK  [0m] Started [0;1;39mRule-based Manager for Device Events and Files[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Boot/Shutdown[0m.
+[[0;32m  OK  [0m] Started [0;1;39mNetwork Time Synchronization[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Set[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Synchronized[0m.
+[[0;32m  OK  [0m] Listening on [0;1;39mLoad/Save RF …itch Status /dev/rfkill Watch[0m.
+[[0;32m  OK  [0m] Found device [0;1;39m/dev/hvc0[0m.
+[[0;32m  OK  [0m] Found device [0;1;39m/dev/xvda1[0m.
+         Activating swap [0;1;39m/dev/xvda1[0m...
+[    3.257331] Adding 524284k swap on /dev/xvda1.  Priority:-2 extents:1 across:524284k SSFS
+[[0;32m  OK  [0m] Activated swap [0;1;39m/dev/xvda1[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSwap[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mSystem Initialization[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt download activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily apt upgrade and clean activities[0m.
+[[0;32m  OK  [0m] Started [0;1;39mPeriodic ext4 Onli…ata Check for All Filesystems[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDiscard unused blocks once a week[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily rotation of log files[0m.
+[[0;32m  OK  [0m] Started [0;1;39mDaily Cleanup of Temporary Directories[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mBasic System[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mTimers[0m.
+[[0;32m  OK  [0m] Started [0;1;39mRegular background program processing daemon[0m.
+         Starting [0;1;39mRemove Stale Onli…t4 Metadata Check Snapshots[0m...
+         Starting [0;1;39mgetty on tty2-tty…nd logind are not available[0m...
+         Starting [0;1;39mSystem Logging Service[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mgetty on tty2-tty… and logind are not available[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSystem Logging Service[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mRemove Stale Onli…ext4 Metadata Check Snapshots[0m.
+[[0;32m  OK  [0m] Finished [0;1;39mHelper to synchronize boot up for ifupdown[0m.
+         Starting [0;1;39mRaise network interfaces[0m...
+[[0;1;31mFAILED[0m] Failed to start [0;1;39mRaise network interfaces[0m.
+See 'systemctl status networking.service' for details.
+[[0;32m  OK  [0m] Reached target [0;1;39mNetwork[0m.
+         Starting [0;1;39mOpenBSD Secure Shell server[0m...
+         Starting [0;1;39mPermit User Sessions[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mPermit User Sessions[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty1[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty2[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty3[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty4[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty5[0m.
+[[0;32m  OK  [0m] Started [0;1;39mGetty on tty6[0m.
+[[0;32m  OK  [0m] Started [0;1;39mSerial Getty on hvc0[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mLogin Prompts[0m.
+[[0;32m  OK  [0m] Started [0;1;39mOpenBSD Secure Shell server[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mMulti-User System[0m.
+[[0;32m  OK  [0m] Reached target [0;1;39mGraphical Interface[0m.
+         Starting [0;1;39mUpdate UTMP about System Runlevel Changes[0m...
+[[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Runlevel Changes[0m.
+
+Debian GNU/Linux 11 xenguest hvc0
+
+xenguest login: 
